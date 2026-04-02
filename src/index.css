@@ -14,3 +14,23 @@ body {
 button {
     @apply cursor-pointer;
 }
+
+
+
+/* index.css */
+@layer utilities {
+  .reveal-left {
+    filter: blur(12px);
+    opacity: 0;
+    /* Empieza 40px a la izquierda */
+    transform: translateX(-40px); 
+    transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform, filter, opacity;
+  }
+
+  .reveal-active {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

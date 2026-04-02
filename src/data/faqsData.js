@@ -1,22 +1,26 @@
 export const faqsData = [
     {
-        question: "¿Para qué se utiliza esta aplicación SaaS?",
-        answer: "Esta aplicación ayuda a las empresas a gestionar sus flujos de trabajo de manera más eficiente, automatizando tareas, monitoreando el rendimiento e integrándose con herramientas de terceros."
+        question: "¿Cuántas personas necesitan sillas de ruedas y no pueden costearlas?",
+        answer: "Se estima que al menos 100 millones de personas en todo el mundo necesitan una silla de ruedas pero no pueden costearla. En países en desarrollo, esta cifra puede alcanzar el 10% de la población."
     },
     {
-        question: "¿Hay una prueba gratuita disponible?",
-        answer: "Sí, ofrecemos una prueba gratuita de 14 días con acceso completo a todas las funciones. No se requiere tarjeta de crédito para comenzar la prueba."
+        question: "¿De dónde provienen los equipos de movilidad?",
+        answer: "Recibimos equipos y repuestos de hospitales, centros de atención a largo plazo, empresas y particulares comprometidos con la comunidad."
     },
     {
-        question: "¿Puedo cambiar mi plan de suscripción más adelante?",
-        answer: "¡Por supuesto! Puedes actualizar o degradar tu plan en cualquier momento desde la configuración de tu cuenta."
+        question: "¿El equipo recibe mantenimiento antes de ser entregado?",
+        answer: "Sí. Realizamos mantenimiento mecánico y eléctrico completo, incluyendo actualización de piezas. Todos los dispositivos se inspeccionan y prueban rigurosamente antes de su envío."
     },
     {
-        question: "¿Cómo se protege mi información?",
-        answer: "Utilizamos cifrado de nivel empresarial, auditorías de seguridad regulares y centros de datos seguros para garantizar que tu información esté protegida."
+        question: "¿Cuál es el costo de reacondicionar una silla?",
+        answer: "Reacondicionar una silla manual cuesta aproximadamente $50 USD, mientras que una eléctrica oscila entre $300 y $600 USD. Esto es una fracción del costo de una silla nueva ($5,000+ USD)."
     },
     {
-        question: "¿Ofrecen soporte al cliente?",
-        answer: "Sí, nuestro equipo de soporte está disponible las 24 horas, los 7 días de la semana, a través de chat en vivo y correo electrónico. También contamos con un centro de ayuda con documentación detallada y tutoriales."
+        question: "¿Las sillas son aptas para terrenos difíciles?",
+        answer: "Sí, están diseñadas con neumáticos extra resistentes, rodamientos sellados y asientos especializados para soportar las condiciones extremas de los países en desarrollo."
+    },
+    {
+        question: "¿Cómo puedo participar en la causa?",
+        answer: "Puedes ayudar como voluntario en la recolección, transporte y reparación, mediante donaciones deducibles de impuestos o a través de patrocinio corporativo."
     }
 ];

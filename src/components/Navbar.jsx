@@ -83,9 +83,15 @@ export default function Navbar() {
                 <button className="hidden md:block hover:bg-slate-50 transition px-4 py-2 border border-sky-700 text-sky-700 rounded-md font-semibold">
                     Solicitar Equipo
                 </button>
-                <button className="hidden md:block px-6 py-2 bg-sky-700 hover:bg-sky-800 transition text-white rounded-md font-bold shadow-md">
-                    Donar Ahora
-                </button>
+                <a 
+        href="https://www.canadahelps.org/en/charities/purinapaq-mobility-without-borders" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="hidden md:block px-6 py-2 bg-sky-700 hover:bg-sky-800 transition text-white rounded-md font-bold shadow-md text-center"
+        aria-label="Hacer una donación económica a Purinapaq (se abre en una nueva ventana)"
+    >
+        Donar Ahora
+    </a>
                 <button
                     onClick={() => setOpenMobileMenu(!openMobileMenu)}
                     className="md:hidden text-slate-800"
