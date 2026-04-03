@@ -14,7 +14,7 @@ export default function Footer() {
     };
 
     return (
-        <footer className="px-6 md:px-16 lg:px-24 xl:px-32 mt-20 w-full bg-slate-50 pt-16 text-slate-600">
+        <footer className="px-6 md:px-16 lg:px-24 xl:px-32  w-full bg-slate-50 pt-16 text-slate-600">
             <div className="flex flex-col md:flex-row justify-between w-full gap-12 border-b border-slate-200 pb-12">
                 
                 {/* Columna 1: Logo e Info Legal */}

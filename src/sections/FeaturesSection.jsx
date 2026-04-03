@@ -1,9 +1,11 @@
 import { useInView } from "react-intersection-observer";
 import SectionTitle from "../components/SectionTitle";
 import {  History } from "lucide-react"; // O usa iconos similares
+import { useNavigate } from "react-router-dom";
 
 export default function AboutSection() {
     const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
+    const navigate = useNavigate();
     return (
         <section id="sobre-nosotros" className="py-20 bg-white overflow-hidden">
             <div 
@@ -48,7 +50,7 @@ export default function AboutSection() {
                         </p>
                         
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <button className="bg-sky-700 hover:bg-sky-800 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg flex items-center justify-center gap-2">
+                            <button onClick={()=> navigate("/historia")} className="bg-sky-700 hover:bg-sky-800 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg flex items-center justify-center gap-2">
                                 <History size={20} />
                                 Leer historia completa
                             </button>
