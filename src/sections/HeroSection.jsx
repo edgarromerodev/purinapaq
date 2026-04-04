@@ -1,12 +1,14 @@
+import { useNavigate } from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
 
 export default function HeroSection() {
+    const navigate = useNavigate();
     return (
         <section id="inicio" className="relative min-h-screen flex items-center justify-center pt-20">
             {/* Imagen de fondo (Mantén tu código actual aquí) */}
             <div className="absolute inset-0 z-0">
                 <img 
-                    src="/images/hero-purinapaq.jpg" 
+                    src="/images/donation.webp" 
                     alt="Fondo Purinapaq" 
                     className="w-full h-full object-cover"
                 />
@@ -47,7 +49,7 @@ export default function HeroSection() {
                             Ayudamos a personas con discapacidad en regiones vulnerables a recuperar su independencia a través de equipos de movilidad.
                         </p>
                         <div className="mt-8 flex flex-wrap justify-center lg:justify-start gap-4">
-                            <button className="bg-sky-700 hover:bg-sky-800 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg text-lg">
+                            <button onClick={() => navigate('/historia')} className="bg-sky-700 hover:bg-sky-800 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg text-lg">
                                 Conoce nuestra historia
                             </button>
                         </div>

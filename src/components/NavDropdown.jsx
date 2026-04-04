@@ -20,11 +20,9 @@ export default function NavDropdown({ name, subLinks, handleScroll }) {
 
     const handleSubClick = (e, href) => {
         if (href.startsWith("#")) {
-            // Reutilizamos la lógica inteligente del padre
             handleScroll(e, href);
             setIsOpen(false);
         } else {
-            // Es una ruta normal (/equipo), React Router se encarga
             setIsOpen(false);
         }
     };

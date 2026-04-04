@@ -1,21 +1,55 @@
-import { MenuIcon, XIcon } from "lucide-react";
+import { MenuIcon, XIcon, Globe, ChevronDown} from "lucide-react";
 import React, { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom"; // Importamos hooks necesarios
+import { Link, useLocation, useNavigate } from "react-router-dom"; 
 import { navLinks } from "../data/navLinks";
 import NavDropdown from "./NavDropdown";
 
+const LanguageDropdown = ({ changeLanguage }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    return (
+        <div className="relative group" onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)}>
+            <button className="flex items-center gap-1 hover:text-sky-700 transition-colors cursor-pointer text-slate-700 font-medium py-2 uppercase">
+                <Globe size={18} className="text-slate-500" />
+                <ChevronDown size={14} className={`transition-transform ${isOpen ? "rotate-180" : ""}`} />
+            </button>
+            {isOpen && (
+                <div className="absolute right-0 mt-0 w-32 bg-white border border-slate-100 rounded-xl shadow-xl py-2 z-50">
+                    <button onClick={(e) => changeLanguage(e, 'en')} className="w-full text-left px-4 py-2 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-700">🇺🇸 English</button>
+                    <button onClick={(e) => changeLanguage(e, 'es')} className="w-full text-left px-4 py-2 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-700">🇪🇸 Español</button>
+                </div>
+            )}
+        </div>
+    );
+};
+
 export default function Navbar() {
     const [openMobileMenu, setOpenMobileMenu] = useState(false);
-    const location = useLocation(); // Para saber en qué página estamos
-    const navigate = useNavigate(); // Para redirigir al inicio
+    const location = useLocation(); 
+    const navigate = useNavigate(); 
 
     const nosotrosSubLinks = [
         { name: "Sobre Nosotros", href: "#sobre-nosotros" },
         { name: "Misión y Visión", href: "/mision-vision" },      
         { name: "Equipo", href: "/equipo" },                
-        { name: "Historia", href: "/historia" },   
-             
+        { name: "Historia", href: "/historia" },              
     ];
+
+    // --- NUEVO: Opciones de Idioma ---
+    const idiomaLinks = [
+        { name: "🇺🇸 English", href: "en" },
+        { name: "🇪🇸 Español", href: "es" },
+    ];
+
+    // Función para activar Google Translate
+    const changeLanguage = (e, langCode) => {
+        if (e) e.preventDefault();
+        const select = document.querySelector('.goog-te-combo');
+        if (select) {
+            select.value = langCode;
+            select.dispatchEvent(new Event('change'));
+        }
+        setOpenMobileMenu(false);
+    };
 
     useEffect(() => {
         document.body.style.overflow = openMobileMenu ? "hidden" : "auto";
@@ -23,19 +57,14 @@ export default function Navbar() {
 
     const handleNavigation = (e, href) => {
         e.preventDefault();
-        
-        // Si el enlace es un ancla (#)
         if (href.startsWith("#")) {
-            // Si NO estamos en el inicio, primero vamos al inicio
             if (location.pathname !== "/") {
                 navigate("/");
-                // Esperamos un poco a que cargue el inicio y luego scrolleamos
                 setTimeout(() => {
                     const target = document.querySelector(href);
                     if (target) target.scrollIntoView({ behavior: "smooth" });
                 }, 100);
             } else {
-                // Si ya estamos en el inicio, hacemos scroll normal
                 const target = document.querySelector(href);
                 if (target) target.scrollIntoView({ behavior: "smooth" });
             }
@@ -47,7 +76,7 @@ export default function Navbar() {
         <nav className={`flex items-center justify-between fixed z-50 top-0 w-full px-6 md:px-16 lg:px-24 xl:px-32 py-4 transition-all duration-300 ${
             openMobileMenu ? "bg-white" : "bg-white backdrop-blur-md shadow-sm"
         }`}>
-            {/* Logo siempre lleva al inicio */}
+            {/* Logo */}
             <Link to="/" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
                 <img className="h-9 md:h-11 w-auto" src="/images/logo-purinapaq.webp" alt="Purinapaq Logo" />
             </Link>
@@ -61,7 +90,7 @@ export default function Navbar() {
                                 key={link.name}
                                 name={link.name} 
                                 subLinks={nosotrosSubLinks} 
-                                handleScroll={handleNavigation} // Usamos la nueva función
+                                handleScroll={handleNavigation} 
                             />
                         );
                     }
@@ -76,64 +105,53 @@ export default function Navbar() {
                         </a>
                     );
                 })}
+
             </div>
 
-            {/* Menú móvil */}
-            <div className={`fixed inset-0 flex flex-col items-center justify-center gap-6 text-lg font-medium bg-white/95 backdrop-blur-md md:hidden transition duration-300 ${
-                openMobileMenu ? "translate-x-0" : "-translate-x-full"
+            {/* Menú móvil (simplificado para evitar parpadeos) */}
+            <div className={`fixed inset-0 flex flex-col items-center justify-center gap-6 text-lg font-medium bg-white md:hidden transition-transform duration-500 ${
+                openMobileMenu ? "translate-y-0" : "-translate-y-full"
             }`}>
-                {/* Botón Home/Inicio extra para claridad (Opcional pero recomendado) */}
-                <Link to="/" onClick={() => setOpenMobileMenu(false)} className="hover:text-sky-700 font-bold text-xl">
-                    Inicio
-                </Link>
+                <Link to="/" onClick={() => setOpenMobileMenu(false)} className="font-bold text-2xl text-slate-900">Inicio</Link>
+                
+                {/* Idiomas en móvil */}
+                <div className="flex gap-4 py-4 border-b w-full justify-center">
+                    <button onClick={(e) => changeLanguage(e, 'en')} className="text-sm font-bold bg-slate-100 px-4 py-2 rounded-full">🇺🇸 EN</button>
+                    <button onClick={(e) => changeLanguage(e, 'es')} className="text-sm font-bold bg-slate-100 px-4 py-2 rounded-full">🇪🇸 ES</button>
+                </div>
 
                 {navLinks.map((link) => (
-                    <React.Fragment key={link.name}>
-                        {link.name !== "Inicio" && ( // Evitamos duplicar Inicio si ya lo pusimos arriba
-                            <a
-                                href={link.href}
-                                onClick={(e) => handleNavigation(e, link.href)}
-                                className="hover:text-sky-700 cursor-pointer font-bold text-xl"
-                            >
-                                {link.name}
-                            </a>
-                        )}
-                        
-                        {link.name === "Nosotros" && nosotrosSubLinks.map(sub => (
-                            sub.href.startsWith("#") ? (
-                                <a key={sub.name} href={sub.href} onClick={(e) => handleNavigation(e, sub.href)} className="text-slate-500 text-base pl-4 -mt-4">
-                                    • {sub.name}
-                                </a>
-                            ) : (
-                                <Link key={sub.name} to={sub.href} onClick={() => setOpenMobileMenu(false)} className="text-slate-500 text-base pl-4 -mt-4">
-                                    • {sub.name}
-                                </Link>
-                            )
-                        ))}
-                    </React.Fragment>
+                    link.name !== "Inicio" && (
+                        <a key={link.name} href={link.href} onClick={(e) => handleNavigation(e, link.href)} className="hover:text-sky-700 font-bold text-xl">
+                            {link.name}
+                        </a>
+                    )
                 ))}
 
-                <button className="aspect-square size-10 p-1 bg-sky-700 text-white rounded-md flex items-center justify-center" onClick={() => setOpenMobileMenu(false)}>
-                    <XIcon />
+                <button className="mt-8 aspect-square size-12 p-1 bg-slate-900 text-white rounded-full flex items-center justify-center" onClick={() => setOpenMobileMenu(false)}>
+                    <XIcon size={24} />
                 </button>
             </div>
 
             {/* Botones de Acción */}
             <div className="flex items-center gap-4">
-                <button className="hidden md:block px-4 py-2 border border-sky-700 text-sky-700 rounded-md font-semibold">
-                    Solicitar Equipo
+                <div className="hidden md:block mr-2">
+        <LanguageDropdown changeLanguage={changeLanguage} />
+    </div>
+                <button onClick={()=> navigate("/donar-equipo")} className="hidden md:block px-4 py-2 border border-sky-700 text-sky-700 rounded-md font-semibold">
+                    Donar Equipo
                 </button>
                 <a 
                     href="https://www.canadahelps.org/en/charities/purinapaq-mobility-without-borders" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="hidden md:block px-6 py-2 bg-sky-700 hover:bg-sky-800 transition text-white rounded-md font-bold shadow-md text-center"
+                    className="px-6 py-2 bg-sky-700 hover:bg-sky-800 transition text-white rounded-md font-bold shadow-md text-center"
                 >
                     Donar Ahora
                 </a>
 
-                <button onClick={() => setOpenMobileMenu(!openMobileMenu)} className="md:hidden text-slate-800">
-                    <MenuIcon size={26} />
+                <button onClick={() => setOpenMobileMenu(!openMobileMenu)} className="md:hidden text-slate-800 p-2">
+                    {openMobileMenu ? <XIcon size={26} /> : <MenuIcon size={26} />}
                 </button>
             </div>
         </nav>

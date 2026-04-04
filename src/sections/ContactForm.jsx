@@ -1,15 +1,25 @@
 import React from "react";
+import { useInView } from "react-intersection-observer";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 
 export default function ContactForm() {
+    // Hooks para las animaciones individuales por bloque
+    const { ref: refLeft, inView: inViewLeft } = useInView({ triggerOnce: true, threshold: 0.1 });
+    const { ref: refRight, inView: inViewRight } = useInView({ triggerOnce: true, threshold: 0.1 });
+
     return (
-        <section  id="contacto" className="py-24 bg-sky-50 overflow-hidden">
+        <section id="contacto" className="py-24 bg-sky-50 overflow-hidden">
             <div className="w-full px-6 md:px-16 lg:px-24 xl:px-32 mx-auto">
                 <div className="grid lg:grid-cols-2 gap-12 items-stretch">
                     
                     {/* --- LADO IZQUIERDO: FORMULARIO --- */}
-                    <div className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-sky-100">
-                        <h2 className="text-4xl font-bold text-slate-900 mb-4 tracking-tight">
+                    <div 
+                        ref={refLeft}
+                        className={`bg-white p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-sky-100 transition-all duration-1000 ${
+                            inViewLeft ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                        }`}
+                    >
+                        <h2 className="text-3xl font-semibold text-slate-900 mb-4 tracking-tight">
                             ¿Tienes preguntas?
                         </h2>
                         <p className="text-slate-600 mb-8 leading-relaxed">
@@ -54,7 +64,12 @@ export default function ContactForm() {
                     </div>
 
                     {/* --- LADO DERECHO: INFO DE CONTACTO (AZUL PROFUNDO) --- */}
-                    <div className="bg-sky-900 rounded-[2.5rem] p-10 lg:p-14 relative overflow-hidden text-white flex flex-col justify-between shadow-xl">
+                    <div 
+                        ref={refRight}
+                        className={`bg-sky-900 rounded-[2.5rem] p-10 lg:p-14 relative overflow-hidden text-white flex flex-col justify-between shadow-xl transition-all duration-1000 delay-200 ${
+                            inViewRight ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                        }`}
+                    >
                         {/* Círculos decorativos para suavizar el fondo */}
                         <div className="absolute top-0 right-0 w-80 h-80 bg-sky-400/10 rounded-full blur-3xl -mr-40 -mt-40"></div>
                         <div className="absolute bottom-0 left-0 w-64 h-64 bg-sky-900/30 rounded-full blur-3xl -ml-32 -mb-32"></div>

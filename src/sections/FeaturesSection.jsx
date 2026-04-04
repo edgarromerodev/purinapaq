@@ -1,10 +1,11 @@
 import { useInView } from "react-intersection-observer";
 import SectionTitle from "../components/SectionTitle";
-import {  History } from "lucide-react"; // O usa iconos similares
+import {  History } from "lucide-react"; 
 import { useNavigate } from "react-router-dom";
 
 export default function AboutSection() {
     const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
+    
     const navigate = useNavigate();
     return (
         <section id="sobre-nosotros" className="py-20 bg-white overflow-hidden">
@@ -39,7 +40,7 @@ export default function AboutSection() {
                         <div className="inline-block px-4 py-1.5 bg-sky-50 text-sky-700 rounded-full text-sm font-bold mb-6">
                             Nuestra Historia
                         </div>
-                        <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+                        <h3 className="text-3xl md:text-3xl font-semibold text-slate-900 mb-6">
                             Fundada por la experiencia y el corazón.
                         </h3>
                         <p className="text-slate-600 mb-6 leading-relaxed">

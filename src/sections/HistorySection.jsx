@@ -50,7 +50,7 @@ export default function HistorySection() {
                             <div className="inline-block px-4 py-1.5 bg-sky-50 text-sky-700 rounded-full text-sm font-bold mb-6">
                                 El Origen (2007)
                             </div>
-                            <h3 className="text-3xl font-bold text-slate-900 mb-6 text-balance">
+                            <h3 className="text-3xl font-semibold text-slate-900 mb-6 text-balance">
                                 Fundada por la experiencia y el corazón de José Orozco.
                             </h3>
                             <p className="text-slate-600 mb-6 leading-relaxed">
@@ -87,7 +87,7 @@ export default function HistorySection() {
                             <div className="inline-block px-4 py-1.5 bg-sky-50 text-sky-700 rounded-full text-sm font-bold mb-6">
                                 Expansión y Logros
                             </div>
-                            <h3 className="text-3xl font-bold text-slate-900 mb-6">
+                            <h3 className="text-3xl font-semibold text-slate-900 mb-6">
                                 Un esfuerzo internacional con impacto social significativo.
                             </h3>
                             <p className="text-slate-600 mb-6 leading-relaxed">
@@ -121,7 +121,7 @@ export default function HistorySection() {
                             <div className="inline-block px-4 py-1.5 bg-sky-100 text-sky-700 rounded-full text-sm font-bold mb-6">
                                 Iniciativa 2026
                             </div>
-                            <h3 className="text-3xl font-bold text-slate-900 mb-6">
+                            <h3 className="text-3xl font-semibold text-slate-900 mb-6">
                                 "El Don de la Movilidad": Nuestra meta más ambiciosa.
                             </h3>
                             <p className="text-slate-600 mb-6 leading-relaxed">

@@ -52,7 +52,7 @@ export default function MissionVision() {
                             <div className="inline-block px-4 py-1.5 bg-sky-100 text-sky-700 rounded-full text-sm font-bold mb-6">
                                 Nuestra Misión
                             </div>
-                            <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+                            <h3 className="text-3xl  font-semibold text-slate-900 mb-6">
                                 Ayudar a recuperar la movilidad a quien más lo necesita.
                             </h3>
                             <p className="text-slate-600 mb-6 leading-relaxed">
@@ -100,7 +100,7 @@ export default function MissionVision() {
                             <div className="inline-block px-4 py-1.5 bg-sky-100 text-sky-700 rounded-full text-sm font-bold mb-6">
                                 Nuestra Visión
                             </div>
-                            <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+                            <h3 className="text-3xl  font-semibold text-slate-900 mb-6">
                                 Que la economía no sea una barrera para soñar.
                             </h3>
                             <p className="text-slate-600 mb-6 leading-relaxed text-lg">
