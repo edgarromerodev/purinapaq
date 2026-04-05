@@ -1,0 +1,221 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "impact": "Our Impact",
+    "donations": "Donations",
+    "contact": "Contact Us",
+    "btn_donate_gear": "Donate Equipment",
+    "btn_donate_now": "Donate Now",
+    "about_sub": {
+      "about": "About Us",
+      "mission": "Mission & Vision",
+      "team": "Our Team",
+      "history": "History"
+    }
+  }, "hero": {
+    "title": "Bringing mobility and hope to those who need it most.",
+    "description": "We help people with disabilities in vulnerable regions regain their independence through mobility equipment.",
+    "button": "Learn our story"
+  },
+  "stats": {
+    "title_1": "Our Impact",
+    "title_2": "Figures that transform realities",
+    "title_3": "Each number represents a story of resilience and the collective effort to bring hope where it is most needed.",
+    "item_1": {
+      "label": "Containers shipped",
+      "description": "Medical and mobility equipment distributed globally."
+    },
+    "item_2": {
+      "label": "Changing lives",
+      "description": "Since our founding, serving vulnerable communities."
+    },
+    "item_3": {
+      "label": "People benefited",
+      "description": "Individuals who regained their independence and mobility."
+    }
+  },
+
+  "about": {
+    "section_title": "About Us",
+    "subtitle": "Mobility Without Borders",
+    "intro_text": "Since 2007, we have been transforming lives by delivering independence and dignity through mobility equipment in vulnerable communities.",
+    "quote": "\"We believe mobility is more than a physical need: it is independence, dignity, and inclusion.\"",
+    "badge": "Our Story",
+    "heading": "Founded by experience and heart.",
+    "p1": "Purinapaq was founded in **2007 by José Orozco**, a Peruvian immigrant in Canada. After a workplace accident in the 90s that left him in a wheelchair, José experienced firsthand the challenges of disability.",
+    "p2": "This experience inspired him to help those facing similar difficulties in Peru and other developing countries, where access to basic mobility devices is often impossible without financial support.",
+    "btn_history": "Read full story"
+  },
+  "cta": {
+    "title": "We need your support, please donate generously!",
+    "description": "Every dollar and every piece of equipment donated is managed responsibly. Your contribution allows a person to regain their independence and dignity.",
+    "btn_credit_card": "Donate with Credit Card",
+    "aria_label": "Make a financial donation to Purinapaq (opens in a new window)",
+    "tax_note": "* All donations are tax-deductible in Canada.",
+    "etransfer": {
+      "title": "E-Transfer",
+      "instruction": "Send your donation via online banking to:",
+      "important_note": "Important: Include your name, address, and email in the message to receive your tax receipt (5-7 business days)."
+    },
+    "check": {
+      "title": "By Check",
+      "payable_to": "Payable to: ",
+      "address": "306-30 Elsinore Path, Etobicoke, Ontario, M8V 3Z6, CANADA.",
+      "charity_reg": "Charity Reg. No. 742640535RR0001"
+    }
+  },
+  "faq": {
+    "title_1": "Frequently Asked Questions",
+    "title_2": "Common Concerns",
+    "title_3": "We answer your questions about how we manage donations and the impact of our work in the community.",
+    "questions": [
+      {
+        "q": "How many people need wheelchairs and cannot afford them?",
+        "a": "It is estimated that at least 100 million people worldwide need a wheelchair but cannot afford one. In developing countries, this figure can reach 10% of the population."
+      },
+      {
+        "q": "Where does the mobility equipment come from?",
+        "a": "We receive equipment and parts from hospitals, long-term care centers, businesses, and individuals committed to the community."
+      },
+      {
+        "q": "Is the equipment maintained before being delivered?",
+        "a": "Yes. We perform full mechanical and electrical maintenance, including part upgrades. All devices are rigorously inspected and tested before shipping."
+      },
+      {
+        "q": "What is the cost of refurbishing a chair?",
+        "a": "Refurbishing a manual chair costs approximately $50 USD, while an electric one ranges between $300 and $600 USD. This is a fraction of the cost of a new chair ($5,000+ USD)."
+      },
+      {
+        "q": "Are the chairs suitable for difficult terrain?",
+        "a": "Yes, they are designed with extra-resistant tires, sealed bearings, and specialized seating to withstand the extreme conditions of developing countries."
+      },
+      {
+        "q": "How can I participate in the cause?",
+        "a": "You can help as a volunteer in collection, transport, and repair, through tax-deductible donations, or via corporate sponsorship."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Have questions?",
+    "subtitle": "We'd love to hear from you! Contact us to find out how you can join",
+    "form": {
+      "name_label": "Your name",
+      "name_placeholder": "e.g. John Doe",
+      "email_label": "Email address",
+      "email_placeholder": "email@example.com",
+      "subject_label": "Subject",
+      "subject_placeholder": "How can we help you?",
+      "message_label": "Message",
+      "message_placeholder": "Write your message here...",
+      "consent": "I wish to receive information from Purinapaq. I understand that I can withdraw my consent at any time.",
+      "btn_send": "Send Message"
+    },
+    "info": {
+      "title": "Connect with us",
+      "email_tag": "Write to us",
+      "phone_tag": "Call us",
+      "location_tag": "Location",
+      "charity_note": "Purinapaq is a registered charitable organization under number #742640535RR0001"
+    }
+  },
+  "footer": {
+    "slogan": "\"To help those in need get moving...\"",
+    "charity_label": "Charity No.",
+    "nav_title": "Navigation",
+    "contact_title": "Contact",
+    "address": "306-30 Elsinore Path, Etobicoke, Ontario, M8V 3Z6, Canada",
+    "rights": "© {{year}} Purinapaq | Mobility without borders. All rights reserved.",
+    "dev_by": "Developed with",
+    "dev_for": "for Purinapaq"
+  },
+  "mission_vision": {
+    "section_tag1": "Purpose and Goals",
+    "section_tag2": "Our Mission and Vision",
+    "section_tag3": "At Purinapaq, we work with a clear objective: to transform the reality of disability through mobility.",
+    "mission": {
+      "badge": "Our Mission",
+      "title": "Helping those who need it most regain their mobility.",
+      "desc_1": "We systematically acquire, repair, and distribute rehabilitation and mobility assistance equipment for people with disabilities.",
+      "quote": "\"We offer these communities the knowledge and tools necessary to be independent and self-sufficient.\"",
+      "items": ["Acquisition", "Repair", "Distribution", "Training"],
+      "card_title": "Direct Impact",
+      "card_desc": "Regaining autonomy"
+    },
+    "vision": {
+      "badge": "Our Vision",
+      "title": "Ensuring the economy is not a barrier to dreaming.",
+      "desc_1": "We visualize a future where all people with disabilities in vulnerable regions have **easy access to the mobility equipment they need**.",
+      "desc_2": "We firmly believe that everyone has the right to live the life they choose and fulfill their dreams without restrictions due to physical conditions or economic circumstances.",
+      "card_title": "Universal Access",
+      "card_desc": "A world without restrictions"
+    }
+  },
+  "history": {
+    "title_tag": "Our Journey",
+    "title_main": "The History of Purinapaq",
+    "title_desc": "Since 2007, transforming lives through mobility and human dignity.",
+    "block1": {
+      "badge": "The Origin (2007)",
+      "quote": "\"Purinapaq was born from a personal experience that transformed my vision of the world.\"",
+      "title": "Founded by the experience and heart of José Orozco.",
+      "text_p1": "Purinapaq was founded in **2007 by José Orozco**, a Peruvian immigrant in Canada. The organization was born from his own story: in the early 90s, José suffered a workplace accident that left him in a wheelchair for a long period.",
+      "text_p2": "This experience allowed him to closely understand the challenges of disability and inspired him to help those facing similar difficulties in his native Peru and other countries, where access to equipment is nearly impossible without support."
+    },
+    "block2": {
+      "badge": "Expansion and Achievements",
+      "stat_num": "+40",
+      "stat_desc": "Containers Sent",
+      "title": "An international effort with significant social impact.",
+      "text_p1": "What started as a personal mission is today a global movement. We have sent more than **40 full containers** of equipment to various countries, working with local organizations and workshops supported directly by Purinapaq.",
+      "text_p2": "We also provide local support in Canada to veterans, low-income individuals, and newcomers who do not have access to government aid, ensuring they regain their independence."
+    },
+    "block3": {
+      "badge": "2026 Initiative",
+      "title": "\"The Gift of Mobility\": Our most ambitious goal.",
+      "text_p1": "By 2026, we have gathered equipment to fill **three 40-foot containers**, including over 750 wheelchairs and 400 pediatric devices for those on waiting lists.",
+      "quote": "\"Each device represents a transformed life, an empowered family, and a child with full freedom.\"",
+      "text_p2": "We invite you to join us in providing the gift of mobility to those who need it most."
+    }
+  },
+  "equipment": {
+    "badge": "Donate Equipment",
+    "title": "Transform a life with what you no longer use",
+    "description": "If you have a mobility device (wheelchairs, walkers) or other assistive device gathering dust in the garage, <strong>get in touch with us!</strong> Your donation breaks borders.",
+    "form": {
+      "step1_title": "Personal Information",
+      "name_label": "Full Name *",
+      "address_label": "Address",
+      "city_label": "City *",
+      "phone_label": "Phone *",
+      "email_label": "Email *",
+      "step2_title": "Pickup Preference",
+      "day_label": "Convenient Day *",
+      "time_label": "Suggested Time",
+      "time_placeholder": "Ex: Mornings 9:00 to 12:00",
+      "step3_title": "What would you like to donate?",
+      "other_label": "Other / Comments",
+      "other_placeholder": "Describe the equipment condition...",
+      "submit_btn": "Send Donation Request",
+      "categories": [
+        "Cane", "Walker", "Crutches", "Forearm Crutches", 
+        "Commode Chair", "Cushion", "Hoyer Lift", 
+        "Rehab Equipment", "Manual Wheelchair", 
+        "Power Wheelchair", "Hearing Aid", "White Cane", 
+        "Braille Machine", "Computer", "Laptop", 
+        "Tablet", "Cell Phone"
+      ]
+    },
+    "how_it_works": {
+      "title": "How does it work?",
+      "step_1": "Fill out the form with the equipment details.",
+      "step_2": "We will contact you to coordinate logistics.",
+      "step_3": "The equipment is inspected and delivered to those in need."
+    },
+    "note": {
+      "title": "Important Note",
+      "text": "\"Your donation helps Purinapaq - Mobility without borders transform the lives of people with disabilities worldwide.\""
+    }
+  }
+
+}

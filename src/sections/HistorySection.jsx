@@ -1,31 +1,31 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
-import { History, Globe, Heart, Quote } from "lucide-react";
+import { Quote } from "lucide-react";
 import SectionTitle from "../components/SectionTitle";
 import DonationCTA from "./DonationCTA";
+import { useTranslation, Trans } from "react-i18next";
 
 export default function HistorySection() {
-    // Hooks para animaciones individuales por bloque
+    const { t } = useTranslation();
+    
     const { ref: ref1, inView: inView1 } = useInView({ triggerOnce: true, threshold: 0.2 });
     const { ref: ref2, inView: inView2 } = useInView({ triggerOnce: true, threshold: 0.2 });
     const { ref: ref3, inView: inView3 } = useInView({ triggerOnce: true, threshold: 0.2 });
 
     return (
         <>
-
-        
         <section id="historia" className="py-28 bg-white overflow-hidden">
             <div className="w-full px-6 md:px-16 lg:px-24 xl:px-32 mx-auto">
                 
                 <SectionTitle 
-                    text1="Nuestra Trayectoria" 
-                    text2="Historia de Purinapaq" 
-                    text3="Desde 2007, transformando vidas a través de la movilidad y la dignidad humana."
+                    text1={t('history.title_tag')} 
+                    text2={t('history.title_main')} 
+                    text3={t('history.title_desc')} 
                 />
 
                 <div className="mt-24 space-y-32">
                     
-                    {/* --- BLOQUE 1: EL ORIGEN (Imagen Izquierda) --- */}
+                    {/* --- BLOQUE 1: EL ORIGEN --- */}
                     <div 
                         ref={ref1}
                         className={`flex flex-col lg:flex-row items-center gap-16 transition-all duration-1000 ${
@@ -41,28 +41,30 @@ export default function HistorySection() {
                                 />
                                 <div className="absolute -bottom-6 -right-6 bg-sky-700 text-white p-8 rounded-2xl hidden md:block max-w-xs shadow-xl">
                                     <Quote className="mb-4 opacity-30" size={32} />
-                                    <p className="italic font-medium">"Purinapaq nació de una experiencia personal que transformó mi visión del mundo."</p>
+                                    <p className="italic font-medium">{t('history.block1.quote')}</p>
                                 </div>
                             </div>
                         </div>
 
                         <div className="w-full lg:w-1/2">
                             <div className="inline-block px-4 py-1.5 bg-sky-50 text-sky-700 rounded-full text-sm font-bold mb-6">
-                                El Origen (2007)
+                                {t('history.block1.badge')}
                             </div>
                             <h3 className="text-3xl font-semibold text-slate-900 mb-6 text-balance">
-                                Fundada por la experiencia y el corazón de José Orozco.
+                                {t('history.block1.title')}
                             </h3>
                             <p className="text-slate-600 mb-6 leading-relaxed">
-                                Purinapaq fue fundada en **2007 por José Orozco**, un inmigrante peruano en Canadá. La organización nació de su propia historia: a principios de los 90, José sufrió un accidente laboral que lo dejó en silla de ruedas por un largo periodo.
+                                <Trans i18nKey="history.block1.text_p1">
+                                    Purinapaq fue fundada en **2007 por José Orozco**, un inmigrante peruano en Canadá.
+                                </Trans>
                             </p>
                             <p className="text-slate-600 leading-relaxed">
-                                Esta vivencia le permitió conocer de cerca los desafíos de la discapacidad e inspirarse para ayudar a quienes enfrentan dificultades similares en su Perú natal y otros países, donde el acceso a equipos es casi imposible sin apoyo.
+                                {t('history.block1.text_p2')}
                             </p>
                         </div>
                     </div>
 
-                    {/* --- BLOQUE 2: IMPACTO INTERNACIONAL (Imagen Derecha) --- */}
+                    {/* --- BLOQUE 2: IMPACTO INTERNACIONAL --- */}
                     <div 
                         ref={ref2}
                         className={`flex flex-col lg:flex-row-reverse items-center gap-16 transition-all duration-1000 ${
@@ -77,29 +79,31 @@ export default function HistorySection() {
                                     className="rounded-3xl shadow-2xl w-full h-[450px] object-cover"
                                 />
                                 <div className="absolute -bottom-6 -left-6 bg-slate-900 text-white p-6 rounded-2xl hidden md:block shadow-xl text-center min-w-[200px]">
-                                    <p className="text-4xl font-bold text-sky-400">+40</p>
-                                    <p className="text-sm uppercase tracking-widest font-semibold">Contenedores Enviados</p>
+                                    <p className="text-4xl font-bold text-sky-400">{t('history.block2.stat_num')}</p>
+                                    <p className="text-sm uppercase tracking-widest font-semibold">{t('history.block2.stat_desc')}</p>
                                 </div>
                             </div>
                         </div>
 
                         <div className="w-full lg:w-1/2">
                             <div className="inline-block px-4 py-1.5 bg-sky-50 text-sky-700 rounded-full text-sm font-bold mb-6">
-                                Expansión y Logros
+                                {t('history.block2.badge')}
                             </div>
                             <h3 className="text-3xl font-semibold text-slate-900 mb-6">
-                                Un esfuerzo internacional con impacto social significativo.
+                                {t('history.block2.title')}
                             </h3>
                             <p className="text-slate-600 mb-6 leading-relaxed">
-                                Lo que comenzó como una misión personal es hoy un movimiento global. Hemos enviado más de **40 contenedores completos** de equipos a diversos países, trabajando con organizaciones locales y talleres apoyados directamente por Purinapaq.
+                                <Trans i18nKey="history.block2.text_p1">
+                                    Lo que comenzó como una misión personal es hoy un movimiento global. Hemos enviado más de **40 contenedores completos**.
+                                </Trans>
                             </p>
                             <p className="text-slate-600 leading-relaxed">
-                                También apoyamos localmente en Canadá a veteranos, personas de bajos ingresos y recién llegados que no tienen acceso a ayudas gubernamentales, asegurando que recuperen su independencia.
+                                {t('history.block2.text_p2')}
                             </p>
                         </div>
                     </div>
 
-                    {/* --- BLOQUE 3: EL DON DE LA MOVILIDAD 2026 (Imagen Izquierda) --- */}
+                    {/* --- BLOQUE 3: INICIATIVA 2026 --- */}
                     <div 
                         ref={ref3}
                         className={`flex flex-col lg:flex-row items-center gap-16 transition-all duration-1000 ${
@@ -119,21 +123,23 @@ export default function HistorySection() {
 
                         <div className="w-full lg:w-1/2">
                             <div className="inline-block px-4 py-1.5 bg-sky-100 text-sky-700 rounded-full text-sm font-bold mb-6">
-                                Iniciativa 2026
+                                {t('history.block3.badge')}
                             </div>
                             <h3 className="text-3xl font-semibold text-slate-900 mb-6">
-                                "El Don de la Movilidad": Nuestra meta más ambiciosa.
+                                {t('history.block3.title')}
                             </h3>
                             <p className="text-slate-600 mb-6 leading-relaxed">
-                                Para el 2026, hemos reunido equipo para llenar **tres contenedores de 40 pies**, incluyendo más de 750 sillas de ruedas y 400 dispositivos pediátricos para quienes están en listas de espera.
+                                <Trans i18nKey="history.block3.text_p1">
+                                    Para el 2026, hemos reunido equipo para llenar **tres contenedores de 40 pies**.
+                                </Trans>
                             </p>
                             <div className="bg-sky-50 p-6 rounded-2xl border-l-4 border-sky-600 mb-6">
                                 <p className="text-slate-700 font-medium leading-relaxed">
-                                    "Cada dispositivo representa una vida transformada, una familia empoderada y un niño con libertad plena."
+                                    {t('history.block3.quote')}
                                 </p>
                             </div>
                             <p className="text-slate-600 leading-relaxed">
-                                Les invitamos a unirse a nosotros para brindar el don de la movilidad a quienes más lo necesitan.
+                                {t('history.block3.text_p2')}
                             </p>
                         </div>
                     </div>

@@ -1,12 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 export default function NavDropdown({ name, subLinks, handleScroll }) {
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);
-    const location = useLocation();
-    const navigate = useNavigate();
+
 
     useEffect(() => {
         const handleClickOutside = (event) => {

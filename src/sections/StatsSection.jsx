@@ -1,11 +1,9 @@
-
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import SectionTitle from "../components/SectionTitle";
+import { useTranslation } from "react-i18next"; // 1. Importar hook
 
-// Sub-componente para manejar la animación individual por ítem
 const StatItem = ({ number, label, description }) => {
-    // Detecta si el componente está visible en pantalla
     const { ref, inView } = useInView({
         triggerOnce: true,
         threshold: 0.1, 
@@ -15,9 +13,8 @@ const StatItem = ({ number, label, description }) => {
     const suffix = number.replace(/[0-9]/g, ""); 
 
     return (
-<div 
+        <div 
             ref={ref}
-            // Mezclamos la clase base con la activa según inView
             className={`bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center transition-transform hover:scale-105 reveal-blur ${inView ? "reveal-active" : ""}`}
         >
             <span className="text-5xl md:text-6xl font-extrabold text-sky-700 mb-2">
@@ -36,21 +33,23 @@ const StatItem = ({ number, label, description }) => {
 };
 
 export default function StatsSection() {
+    const { t } = useTranslation(); // 2. Inicializar t
+
     const stats = [
         { 
             number: "+40", 
-            label: "Contenedores enviados", 
-            description: "Equipos médicos y de movilidad distribuidos globalmente." 
+            label: t('stats.item_1.label'), 
+            description: t('stats.item_1.description') 
         },
         { 
             number: "2007", 
-            label: "Cambiando vidas", 
-            description: "Desde nuestra fundación, servimos a comunidades vulnerables." 
+            label: t('stats.item_2.label'), 
+            description: t('stats.item_2.description') 
         },
         { 
             number: "15k", 
-            label: "Personas beneficiadas", 
-            description: "Individuos que recuperaron su independencia y movilidad." 
+            label: t('stats.item_3.label'), 
+            description: t('stats.item_3.description') 
         }
     ];
 
@@ -59,9 +58,9 @@ export default function StatsSection() {
             <div className="w-full px-6 md:px-16 lg:px-24 xl:px-32 mx-auto">
                 
                 <SectionTitle 
-                    text1="Nuestro Impacto" 
-                    text2="Cifras que transforman realidades" 
-                    text3="Cada número representa una historia de superación y el esfuerzo colectivo para llevar esperanza a donde más se necesita."
+                    text1={t('stats.title_1')} 
+                    text2={t('stats.title_2')} 
+                    text3={t('stats.title_3')} 
                 />
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
