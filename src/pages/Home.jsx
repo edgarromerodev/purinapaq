@@ -1,4 +1,4 @@
-import BottomBanner from "../sections/BottomBanner";
+
 import ContactForm from "../sections/ContactForm";
 import DonationCTA from "../sections/DonationCTA";
 import { FaqSection } from "../sections/FaqSection";

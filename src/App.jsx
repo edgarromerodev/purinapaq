@@ -17,7 +17,7 @@ export default function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/mision-vision" element={<MissionVision />} />
-                <Route path="/historia" element={<HistorySection />} />
+                <Route path="/history" element={<HistorySection />} />
                 <Route path="/donar-equipo" element={<EquipmentDonation />} />
             </Routes>
             <Footer />
