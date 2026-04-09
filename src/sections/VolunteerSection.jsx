@@ -140,9 +140,6 @@ export default function VolunteerSection() {
                             <p className="text-lg text-slate-600 leading-relaxed mb-8">
                                 Gain valuable experience and see firsthand the impact of your efforts. Be the hands and heart that deliver mobility to the world.
                             </p>
-                            <button className="px-10 py-5 bg-sky-700 hover:bg-slate-900 text-white rounded-2xl font-bold text-lg transition-all shadow-xl shadow-sky-700/20 active:scale-95 flex items-center gap-3">
-                                <Globe size={20} /> Join Us Today
-                            </button>
                         </div>
                     </div>
 

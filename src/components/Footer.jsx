@@ -1,16 +1,29 @@
-import { Link } from "react-router-dom"; // Importamos Link de React Router
+import { Link, useLocation, useNavigate } from "react-router-dom"; // Añadimos hooks de navegación
 import { Mail, Phone, MapPin, Heart, Send } from "lucide-react";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
+    const location = useLocation(); // Para saber dónde estamos
+    const navigate = useNavigate(); // Para redirigir si es necesario
 
-    const handleSmoothScroll = (e, targetId) => {
-        // Solo aplicar smooth scroll si el targetId empieza con # (anclas internas)
-        if (targetId.startsWith("#")) {
+    // ESTA ES LA FUNCIÓN CLAVE (Similar a tu Navbar)
+    const handleNavigation = (e, href) => {
+        if (href.startsWith("#")) {
             e.preventDefault();
-            const target = document.querySelector(targetId);
-            if (target) {
-                target.scrollIntoView({ behavior: "smooth", block: "start" });
+            const targetId = href.replace("#", "");
+            
+            if (location.pathname !== "/") {
+                // Si no estamos en el Home, navegamos al home primero
+                navigate("/");
+                // Esperamos un poco a que cargue el home y luego hacemos scroll
+                setTimeout(() => {
+                    const element = document.getElementById(targetId);
+                    if (element) element.scrollIntoView({ behavior: "smooth" });
+                }, 300);
+            } else {
+                // Si ya estamos en el Home, solo hacemos scroll
+                const element = document.getElementById(targetId);
+                if (element) element.scrollIntoView({ behavior: "smooth" });
             }
         }
     };
@@ -37,7 +50,7 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* Columna 2: Footer Navigation (Actualizada según cliente) */}
+                    {/* Columna 2: Footer Navigation */}
                     <nav aria-label="Footer Navigation">
                         <h2 className="font-semibold mb-6 text-slate-900 ">
                             Footer Navigation
@@ -55,11 +68,12 @@ export default function Footer() {
                                     Terms
                                 </Link>
                             </li>
+                            {/* FAQ DINÁMICO */}
                             <li>
                                 <a 
                                     href="#faq" 
-                                    onClick={(e) => handleSmoothScroll(e, "#faq")}
-                                    className="hover:text-sky-700 transition-colors flex items-center gap-2 group"
+                                    onClick={(e) => handleNavigation(e, "#faq")}
+                                    className="hover:text-sky-700 transition-colors flex items-center gap-2 group cursor-pointer"
                                 >
                                     <span className="w-1.5 h-1.5 rounded-full bg-sky-200 group-hover:bg-sky-600 transition-colors"></span>
                                     FAQs
@@ -129,12 +143,6 @@ export default function Footer() {
                         <span className="text-slate-400 uppercase">for Purinapaq</span>
                     </div>
                 </div>
-            </div>
-            
-            {/* Lectores de Pantalla / SEO Complementario */}
-            <div className="sr-only">
-                <h3>Purinapaq Footer - Registered Canadian Charity</h3>
-                <p>Purinapaq provides mobility devices to individuals with disabilities. Connect with us via email, phone, or visit our office in Etobicoke, Ontario.</p>
             </div>
         </footer>
     );

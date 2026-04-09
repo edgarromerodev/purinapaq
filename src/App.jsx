@@ -15,6 +15,9 @@ import TestimonialsSection from "./sections/TestimonialsSection";
 import DonationsPage from "./sections/DonationsPage";
 import VolunteerSection from "./sections/VolunteerSection";
 import SponsorSection from "./sections/SponsorSection";
+import NewsStories from "./sections/NewsStories";
+import PrivacyPolicy from "./sections/PrivacyPolicy";
+import TermsConditions from "./sections/TermsConditions";
 
 
 export default function App() {
@@ -37,6 +40,9 @@ export default function App() {
                 <Route path="/equipment-donations" element={<EquipmentDonation />} />
                 <Route path="/volunteer" element={<VolunteerSection />} />
                 <Route path="/sponsor" element={<SponsorSection />} />
+                <Route path="/news" element={<NewsStories/>} />
+                <Route path="/privacy" element={<PrivacyPolicy/>} />
+                <Route path="/terms" element={<TermsConditions/>} />
             </Routes>
             <Footer />
         </>

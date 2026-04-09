@@ -5,28 +5,95 @@ import { useInView } from "react-intersection-observer";
 
 const faqsData = [
     {
-        question: "How many people need wheelchairs and cannot afford them?",
-        answer: "It is estimated that at least 100 million people worldwide need a wheelchair but cannot afford one. In developing countries, this figure can reach up to 10% of the population."
+        question: "What does Purinapaq mean?",
+        answer: "Our name is derived from the Inca language, native to Peru. Pronounced 'pooree-naapac', the Incan verb for walk is 'puri' and 'napaq' is loosely translated to 'let us go'. This term has been used for centuries by the Incan communities of South America which symbolizes partnership both physically and spiritually with our families, communities and our planet. Puri Napaq represents the path we follow together in our journey of life."
     },
     {
-        question: "Where does the mobility equipment come from?",
-        answer: "We receive equipment and parts from hospitals, long-term care centers, businesses, and individuals committed to the community."
+        question: "What does Purinapaq – Mobility Without Borders do?",
+        answer: "We are a Canadian registered charity dedicated to restoring mobility, independence, and dignity to people with disabilities in underserved communities in Canada and developing countries. We refurbish and donate assistive devices such as wheelchairs, mobility scooters, walkers, and orthopedic equipment."
     },
     {
-        question: "Is the equipment maintained before being delivered?",
-        answer: "Yes. We perform complete mechanical and electrical maintenance, including part replacements. All devices are rigorously inspected and tested before shipment."
+        question: "How can I donate mobility equipment?",
+        answer: "You can donate wheelchairs, walkers, scooters, crutches, and other assistive devices. Fill out our online donation form, and our team will contact you to arrange pickup or delivery of your equipment."
     },
     {
-        question: "What is the cost of refurbishing a chair?",
-        answer: "Refurbishing a manual chair costs approximately $50 USD, while an electric one ranges between $300 and $600 USD. This is a fraction of the cost of a new chair ($5,000+ USD)."
+        question: "Is there a cost to pick up donated equipment?",
+        answer: "Yes. To help cover transportation and logistical expenses (including vehicle use and fuel), we kindly request a contribution for equipment pickup. This amount will be included in your official donation receipt and may be used for tax purposes."
     },
     {
-        question: "Are the chairs suitable for difficult terrain?",
-        answer: "Yes, they are designed with extra-resistant tires, sealed bearings, and specialized seating to withstand the extreme conditions in developing countries."
+        question: "Where are donated items delivered?",
+        answer: "Refurbished equipment is distributed to people with disabilities and vulnerable communities, both locally in Canada and internationally, through our distribution programs. Whenever possible, we share photos and reports of the shipment and impact with our donors."
     },
     {
-        question: "How can I get involved in the cause?",
-        answer: "You can help as a volunteer in collection, transportation, and repair, through tax-deductible donations, or via corporate sponsorship."
+        question: "What types of devices do you accept?",
+        answer: (
+            <div className="space-y-2">
+                <p>We accept a wide range of devices including:</p>
+                <ul className="list-disc ml-5 space-y-1">
+                    <li>Manual and powered wheelchairs</li>
+                    <li>Battery-powered mobility scooters</li>
+                    <li>Aluminum and wheeled walkers</li>
+                    <li>Crutches, canes, and other orthopedic devices</li>
+                    <li>Pediatric mobility devices & Bathroom/hygiene equipment</li>
+                    <li>Solar panels, batteries, and medical supplies</li>
+                </ul>
+                <p className="text-sm italic mt-2">All items must be safe for use or suitable for refurbishment.</p>
+            </div>
+        )
+    },
+    {
+        question: "Is Purinapaq a registered organization, and can I claim a tax deduction?",
+        answer: "Yes. Purinapaq is a registered Canadian charity. All donations, including contributions for transportation, will receive an official receipt that can be used for tax deduction purposes according to applicable regulations."
+    },
+    {
+        question: "How can I track the impact of my donation?",
+        answer: "When we send containers or equipment to beneficiary communities, we provide photos and reports documenting the collection, transport, and delivery process. This way, donors can see the tangible difference their contributions make in the lives of recipients."
+    },
+    {
+        question: "What does Purinapaq mean?",
+        answer: "Our name is derived from the Inca language, native to Peru. Pronounced 'pooree-naapac', the Incan verb for walk is 'puri' and 'napaq' is loosely translated to 'let us go'. This term has been used for centuries by the Incan communities of South America which symbolizes partnership both physically and spiritually with our families, communities and our planet. Puri Napaq represents the path we follow together in our journey of life. Regardless of the circumstances, united we move forward together."
+    },
+    {
+        question: "What does Purinapaq – Mobility Without Borders do?",
+        answer: "We are a Canadian registered charity dedicated to restoring mobility, independence, and dignity to people with disabilities in underserved communities in Canada and developing countries. We refurbish and donate assistive devices such as wheelchairs, mobility scooters, walkers, and orthopedic equipment."
+    },
+    {
+        question: "How can I donate mobility equipment?",
+        answer: "You can donate wheelchairs, walkers, scooters, crutches, and other assistive devices. Fill out our online donation form, and our team will contact you to arrange pickup or delivery of your equipment."
+    },
+    {
+        question: "Is there a cost to pick up donated equipment?",
+        answer: "Yes. To help cover transportation and logistical expenses (including vehicle use and fuel), we kindly request a contribution for equipment pickup. This amount will be included in your official donation receipt and may be used for tax purposes."
+    },
+    {
+        question: "Where are donated items delivered?",
+        answer: "Refurbished equipment is distributed to people with disabilities and vulnerable communities, both locally in Canada and internationally, through our distribution programs. Whenever possible, we share photos and reports of the shipment and impact with our donors."
+    },
+    {
+        question: "What types of devices do you accept?",
+        answer: (
+            <div className="space-y-2">
+                <p>We accept the following items:</p>
+                <ul className="list-disc ml-5 space-y-1">
+                    <li>Manual and powered wheelchairs</li>
+                    <li>Battery-powered mobility scooters</li>
+                    <li>Aluminum and wheeled walkers</li>
+                    <li>Crutches, canes, and other orthopedic devices</li>
+                    <li>Pediatric mobility devices</li>
+                    <li>Bathroom and hygiene equipment</li>
+                    <li>Solar panels, batteries, and medical supplies (for special projects)</li>
+                </ul>
+                <p className="text-sm italic mt-2">All items must be safe for use or suitable for refurbishment.</p>
+            </div>
+        )
+    },
+    {
+        question: "Is Purinapaq a registered organization, and can I claim a tax deduction?",
+        answer: "Yes. Purinapaq is a registered Canadian charity. All donations, including contributions for transportation, will receive an official receipt that can be used for tax deduction purposes according to applicable regulations."
+    },
+    {
+        question: "How can I track the impact of my donation?",
+        answer: "When we send containers or equipment to beneficiary communities, we provide photos and reports documenting the collection, transport, and delivery process. This way, donors can see the tangible difference their contributions make in the lives of recipients."
     }
 ];
 
@@ -52,19 +119,21 @@ export const FaqSection = () => {
                 <div className="mt-16 max-w-4xl mx-auto">
                     {faqsData.map((faq, index) => (
                         <div 
-                            className="mb-4 border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition-all duration-300" 
+                            className={`mb-4 border rounded-2xl overflow-hidden shadow-sm transition-all duration-300 ${
+                                openIndex === index ? "border-sky-200 shadow-md" : "border-slate-200"
+                            }`} 
                             key={index}
                         >
                             <button 
                                 className={`flex items-center justify-between w-full p-6 text-left transition-colors ${
-                                    openIndex === index ? "bg-slate-50" : "bg-white hover:bg-slate-50"
+                                    openIndex === index ? "bg-sky-50/50" : "bg-white hover:bg-slate-50"
                                 }`}
                                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                                 aria-expanded={openIndex === index}
                                 aria-controls={`faq-answer-${index}`}
                             >
                                 <h3 className={`text-lg font-semibold pr-4 ${
-                                    openIndex === index ? "text-sky-700" : "text-slate-800"
+                                    openIndex === index ? "text-sky-800" : "text-slate-800"
                                 }`}>
                                     {faq.question}
                                 </h3>
@@ -82,7 +151,7 @@ export const FaqSection = () => {
                                 aria-labelledby={`faq-question-${index}`}
                                 className={`transition-all duration-500 ease-in-out ${
                                     openIndex === index 
-                                        ? "max-h-[500px] opacity-100" 
+                                        ? "max-h-[800px] opacity-100" 
                                         : "max-h-0 opacity-0"
                                 } overflow-hidden`}
                             >
@@ -95,10 +164,10 @@ export const FaqSection = () => {
                 </div>
             </div>
 
-            {/* SEO & Accesibilidad */}
+            {/* SEO & Accesibilidad mejorada para Purinapaq */}
             <div className="sr-only">
-                <h2>Purinapaq FAQ - Mobility Assistance</h2>
-                <p>Find answers about our wheelchair refurbishment process, donation costs, and how to volunteer for mobility causes in Canada and abroad.</p>
+                <h2>Purinapaq FAQ - Mobility Without Borders</h2>
+                <p>Learn about our mission, the meaning of our name, how to donate wheelchairs and mobility equipment in Canada, and tax deduction information.</p>
             </div>
         </section>
     );
