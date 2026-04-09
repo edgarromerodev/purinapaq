@@ -21,7 +21,7 @@ export default function Navbar() {
             subLinks: [
                 { name: "Vision & Mission", href: "/mision-vision" },
                 { name: "Our Story", href: "/history" },
-                { name: "Team & Partners", href: "/equipo" },
+                { name: "Team & Partners", href: "/team-partners" },
                 { name: "Meet the Director", href: "/director" },
             ] 
         },

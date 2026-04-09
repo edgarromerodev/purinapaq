@@ -10,7 +10,7 @@ export default function AboutSection() {
 
     return (
         <section 
-            id="about" 
+            id="features" 
             className="py-20 bg-white overflow-hidden"
             aria-labelledby="about-heading"
         >
@@ -60,7 +60,7 @@ export default function AboutSection() {
                             Transforming lives through mobility
                         </h3>
                         
-                        <div className="space-y-6">
+                        <div className="space-y-6 text-lg ">
                             <p className="text-slate-600 leading-relaxed">
                                 <strong>Purinapaq - Mobility Without Borders</strong> is a Canadian registered charity dedicated to transforming lives by recovering, refurbishing, and redistributing mobility and assistive devices to people with disabilities in developing countries and underserved communities across Canada.
                             </p>

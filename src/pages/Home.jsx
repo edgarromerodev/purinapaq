@@ -11,8 +11,9 @@ export default function Home() {
     return (
 <main>
             <HeroSection />
-            <StatsSection />
+            
             <FeaturesSection />
+            <StatsSection />
              <DonationCTA/>
             <FaqSection />
             <ContactForm/>
