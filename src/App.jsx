@@ -12,6 +12,9 @@ import DeviceRequestForm from "./sections/DeviceRequestForm";
 import CommunityWorkshops from "./sections/CommunityWorkshops";
 import GlobalImpactSection from "./sections/GlobalImpactSection";
 import TestimonialsSection from "./sections/TestimonialsSection";
+import DonationsPage from "./sections/DonationsPage";
+import VolunteerSection from "./sections/VolunteerSection";
+import SponsorSection from "./sections/SponsorSection";
 
 
 export default function App() {
@@ -30,7 +33,10 @@ export default function App() {
                 <Route path="/workshops" element={<CommunityWorkshops/>} />
                 <Route path="/global-impact" element={<GlobalImpactSection/>} />
                 <Route path="/testimonials" element={<TestimonialsSection/>} />
-                <Route path="/donar-equipo" element={<EquipmentDonation />} />
+                  <Route path="/donate" element={<DonationsPage/>} />
+                <Route path="/equipment-donations" element={<EquipmentDonation />} />
+                <Route path="/volunteer" element={<VolunteerSection />} />
+                <Route path="/sponsor" element={<SponsorSection />} />
             </Routes>
             <Footer />
         </>

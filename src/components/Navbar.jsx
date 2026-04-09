@@ -43,7 +43,7 @@ export default function Navbar() {
             hasSubmenu: true, 
             subLinks: [
                 { name: "Donate", href: "/donate" },
-                { name: "Donate equipment", href: "/donar-equipo" },
+                { name: "Donate equipment", href: "/equipment-donations" },
                 { name: "Volunteer", href: "/volunteer" },
                 { name: "Partner With Us - Sponsor", href: "/sponsor" },
             ]
@@ -147,7 +147,7 @@ export default function Navbar() {
                 {/* Botón de Acción y Menú Hamburguesa */}
                 <div className="flex items-center gap-3 z-[60] flex-shrink-0">
                     <button 
-                        onClick={() => navigate("/donar-equipo")} 
+                        onClick={() => navigate("/equipment-donations")} 
                         className="hidden md:block px-5 py-2.5 bg-sky-700 hover:bg-sky-800 transition text-white rounded-md font-bold shadow-md md:text-xs lg:text-sm xl:text-base"
                     >
                         Donate Equipment
@@ -221,7 +221,7 @@ export default function Navbar() {
                 {/* Botón de donación dentro del menú móvil */}
                 <div className="mt-6 w-full px-10 pb-10">
                     <button 
-                        onClick={() => { navigate("/donar-equipo"); setOpenMobileMenu(false); }} 
+                        onClick={() => { navigate("/equipment-donations"); setOpenMobileMenu(false); }} 
                         className="w-full py-4 bg-sky-700 text-white rounded-xl font-bold text-lg shadow-lg"
                     >
                         Donate Equipment
