@@ -100,11 +100,7 @@ export default function Navbar() {
                 isVisible ? "translate-y-0" : "-translate-y-full"
             } ${openMobileMenu ? "bg-white" : "bg-white/90 backdrop-blur-md shadow-sm"}`}
         >
-            {/* CONTENEDOR MAESTRO:
-                - max-w-[1450px]: Limita el ancho en monitores grandes (Ultra-wide).
-                - mx-auto: Centra el contenido.
-                - px-6 a 2xl:px-20: Crea el espacio lateral progresivo para Laptops.
-            */}
+           
             <nav className="max-w-[1650px] mx-auto flex items-center justify-between px-6 md:px-10 lg:px-12 xl:px-16 2xl:px-20 py-4">
                 
                 {/* Logo */}

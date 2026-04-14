@@ -12,17 +12,29 @@ export default function HeroSection() {
             aria-label="Welcome section"
         >
             {/* Contenedor de Imagen de Fondo */}
-            <div className="absolute inset-0 z-0">
-                <img 
-                    src="/images/donation.webp" 
-                    alt="A young man receiving mobility assistance from Purinapaq" 
-                    className="w-full h-full object-cover object-top" 
-                    loading="lazy" 
-                />
-                
-                {/* OVERLAY TÉCNICO */}
-                <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/12 to-transparent"></div>
-            </div>
+{/* Contenedor de Imagen de Fondo */}
+<div className="absolute inset-0 z-0">
+
+    <picture>
+        <source 
+            media="(max-width: 767px)" 
+            srcSet="/images/donation-mobile.webp" 
+        />
+
+        <img 
+            src="/images/donation.webp" 
+            alt="A young man receiving mobility assistance from Purinapaq" 
+            className="w-full h-full object-cover object-top" 
+            loading="lazy" 
+        />
+
+
+
+    </picture>
+    
+    {/* OVERLAY TÉCNICO */}
+    <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/12 to-transparent"></div>
+</div>
 
             {/* CONTENEDOR MAESTRO
                 - py-10: Asegura que el contenido nunca toque los bordes superior/inferior en laptops.
