@@ -171,7 +171,7 @@ export default function Navbar() {
                                     <a 
                                         href={link.href} 
                                         onClick={(e) => handleNavigation(e, link.href)} 
-                                        className="text-xl font-bold text-slate-800"
+                                        className="text-xl font-semibold text-slate-800"
                                     >
                                         {link.name}
                                     </a>

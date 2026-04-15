@@ -31,17 +31,15 @@ export default function DonationCTA() {
                             Your support is essential. At Purinapaq, we provide more than movement—we offer independence, dignity, and a more inclusive world where mobility is a right, not a privilege.
                         </p>
                         
-                        <div className="flex flex-col sm:flex-row justify-center gap-4">
-                            <a 
-                                href="https://www.canadahelps.org/en/charities/purinapaq-mobility-without-borders" 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                aria-label="Donate now via CanadaHelps (opens in a new tab)"
-                                className="inline-flex items-center justify-center gap-2 bg-sky-600 hover:bg-sky-700 text-white px-10 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-lg active:scale-95"
+                        <div className="flex flex-col items-center justify-center gap-6 bg-white/5 backdrop-blur-sm p-8 rounded-[2rem] border border-white/10 max-w-md mx-auto">
+                            <h4 className="text-white font-semibold text-sm ">
+                                Credit Card or Digital Wallet
+                            </h4>
+                            <stripe-buy-button
+                                buy-button-id="buy_btn_1TIu7aCZmNSjYL4FIWzXOcRe"
+                                publishable-key="pk_live_51TIAo3CZmNSjYL4FFbJZuqSWIdym5nanxGcu4vA8HehPAWNs4Tbp6GpOLF3SVBcjHEw6oL0aFKJhHBQLSAtytcCr00M6V4oqYK"
                             >
-                                <CreditCard size={22} />
-                                Donate Online Now
-                            </a>
+                            </stripe-buy-button>
                         </div>
                         <p className="mt-8 text-sm text-sky-200 font-medium">
                             Donors receive official donation receipts for tax purposes.

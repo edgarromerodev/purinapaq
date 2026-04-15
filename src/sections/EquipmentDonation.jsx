@@ -1,6 +1,6 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
-import { Truck, Heart, Info, CheckCircle2, ClipboardCheck } from "lucide-react";
+import { Truck, Heart, CheckCircle2, ClipboardCheck } from "lucide-react";
 
 export default function EquipmentDonation() {
     const { ref: refHeader, inView: inViewHeader } = useInView({ triggerOnce: true, threshold: 0.2 });

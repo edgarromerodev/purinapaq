@@ -45,13 +45,22 @@ export default function GallerySection() {
                     {rows.map((row, rowIndex) => (
                         <div key={rowIndex} className="flex flex-col md:flex-row items-center gap-4 h-[400px] md:h-[450px] w-full mx-auto">
                             {row.map((item, idx) => (
+                                
                                 <div 
                                     key={idx}
-                                    className="relative group flex-grow transition-all duration-700 ease-in-out w-full md:w-24 h-full overflow-hidden rounded-[2.5rem] hover:md:w-[60%] border border-slate-100 shadow-md"
+                                    className="relative 
+                                    group 
+                                    flex-grow 
+                                    transition-all duration-700 ease-in-out w-full md:w-24 h-full 
+                                    overflow-hidden 
+                                    rounded-[2.5rem] hover:md:w-[60%] border border-slate-100 shadow-md"
                                 >
                                     {/* Imagen de Fondo */}
                                     <img 
-                                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                        className="absolute inset-0 h-full w-full object-cover 
+                                        transition-transform 
+                                        duration-700
+                                         group-hover:scale-110"
                                         src={item.image}
                                         alt={item.title} 
                                         loading="lazy"
