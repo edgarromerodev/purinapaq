@@ -97,8 +97,9 @@ export default function Navbar() {
     return (
         <header 
             className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-                isVisible ? "translate-y-0" : "-translate-y-full"
-            } ${openMobileMenu ? "bg-white" : "bg-white/90 backdrop-blur-md shadow-sm"}`}
+                // MODIFICACIÓN: Si el menú móvil está abierto, forzamos translate-y-0
+                (isVisible || openMobileMenu) ? "translate-y-0" : "-translate-y-full"
+            } ${openMobileMenu ? "bg-white h-screen" : "bg-white/90 backdrop-blur-md shadow-sm"}`}
         >
            
             <nav className="max-w-[1650px] mx-auto flex items-center justify-between px-6 md:px-10 lg:px-12 xl:px-16 2xl:px-20 py-4">
@@ -116,7 +117,6 @@ export default function Navbar() {
                     />
                 </Link>
 
-                {/* Desktop Menu - Gap responsivo para evitar amontonamiento en laptops */}
                 <div className="hidden items-center md:flex md:gap-4 lg:gap-6 xl:gap-10 font-medium">
                     {navLinks.map((link) => (
                         link.hasSubmenu ? (

@@ -11,8 +11,6 @@ export default function HeroSection() {
             role="region"
             aria-label="Welcome section"
         >
-            {/* Contenedor de Imagen de Fondo */}
-{/* Contenedor de Imagen de Fondo */}
 <div className="absolute inset-0 z-0">
 
     <picture>
@@ -27,18 +25,14 @@ export default function HeroSection() {
             className="w-full h-full object-cover object-top" 
             loading="lazy" 
         />
-
-
-
     </picture>
     
-    {/* OVERLAY TÉCNICO */}
-    <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/12 to-transparent"></div>
+
+    <div className='absolute inset-0 bg-gradient-to-r  
+    from-black/100 via-black/8  to-transparent '></div>
+
 </div>
 
-            {/* CONTENEDOR MAESTRO
-                - py-10: Asegura que el contenido nunca toque los bordes superior/inferior en laptops.
-            */}
             <div className="relative z-10 w-full max-w-[1650px] mx-auto px-6 md:px-10 lg:px-12 xl:px-16 2xl:px-20 py-10">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
                     <div className="text-white max-w-2xl lg:text-left text-center">

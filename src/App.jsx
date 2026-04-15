@@ -18,6 +18,7 @@ import SponsorSection from "./sections/SponsorSection";
 import NewsStories from "./sections/NewsStories";
 import PrivacyPolicy from "./sections/PrivacyPolicy";
 import TermsConditions from "./sections/TermsConditions";
+import GallerySection from "./sections/GallerySection";
 
 
 export default function App() {
@@ -36,6 +37,7 @@ export default function App() {
                 <Route path="/workshops" element={<CommunityWorkshops/>} />
                 <Route path="/global-impact" element={<GlobalImpactSection/>} />
                 <Route path="/testimonials" element={<TestimonialsSection/>} />
+                <Route path="/gallery" element={<GallerySection/>} />
                   <Route path="/donate" element={<DonationsPage/>} />
                 <Route path="/equipment-donations" element={<EquipmentDonation />} />
                 <Route path="/volunteer" element={<VolunteerSection />} />
