@@ -45,11 +45,30 @@ export default function ContactForm() {
             </p>
 
             <form
-              action="mailto:edgarromerocuc94@gmail.com"
-              method="post"
-              encType="text/plain"
-              className="space-y-5"
-              aria-label="Contact form"
+               className="space-y-5"
+  onSubmit={(e) => {
+    e.preventDefault();
+
+    const data = new FormData(e.target);
+
+    const name = data.get("name");
+    const email = data.get("email");
+    const subject = data.get("subject");
+    const message = data.get("message");
+    const consent = data.get("consent") ? "Yes" : "No";
+
+    const body =
+`name=${name}
+email=${email}
+subject=${subject}
+message=${message}
+consent=${consent}`;
+
+    const mailtoLink =
+`mailto:edgarromerocuc94@gmail.com?subject=${encodeURIComponent(subject || "Contact Form")}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoLink;
+  }}
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
