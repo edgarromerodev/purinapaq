@@ -46,29 +46,32 @@ export default function ContactForm() {
 
             <form
                className="space-y-5"
-  onSubmit={(e) => {
-    e.preventDefault();
+   onSubmit={(e) => {
+  e.preventDefault();
 
-    const data = new FormData(e.target);
+  const data = new FormData(e.target);
 
-    const name = data.get("name");
-    const email = data.get("email");
-    const subject = data.get("subject");
-    const message = data.get("message");
-    const consent = data.get("consent") ? "Yes" : "No";
+  const name = data.get("name");
+  const email = data.get("email");
+  const subject = data.get("subject");
+  const message = data.get("message");
+  const consent = data.get("consent") ? "Yes" : "No";
 
-    const body =
-`name=${name}
-email=${email}
-subject=${subject}
-message=${message}
-consent=${consent}`;
+  const body = `
+Name: ${name}
+Email: ${email}
+Message: ${message}
+Consent: ${consent}
+  `;
 
-    const mailtoLink =
-`mailto:edgarromerocuc94@gmail.com?subject=${encodeURIComponent(subject || "Contact Form")}&body=${encodeURIComponent(body)}`;
+  const mailto = `mailto:edgarromerocuc94@gmail.com?subject=${encodeURIComponent(
+    subject || "Contact Form"
+  )}&body=${encodeURIComponent(body)}`;
 
-    window.location.href = mailtoLink;
-  }}
+  const link = document.createElement("a");
+  link.href = mailto;
+  link.click();
+}}
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
