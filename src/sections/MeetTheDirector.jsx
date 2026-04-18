@@ -23,7 +23,7 @@ export default function MeetTheDirector() {
                             
                             <div className="relative group">
                                 <img 
-                                    src="/images/team1.webp" 
+                                    src="/images/director.webp" 
                                     alt="José Orozco - Executive Director of Purinapaq" 
                                     className="rounded-[40px] shadow-2xl w-full h-[600px] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                                 />
@@ -33,13 +33,13 @@ export default function MeetTheDirector() {
                                     <p className="text-sky-700 font-bold text-sm tracking-widest uppercase text-center">Founder & Executive Director</p>
                                 </div>
 
-                                {/* Cita destacada (Blockquote) sobre la imagen o debajo */}
-                                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[90%] bg-sky-700 text-white p-8 rounded-3xl shadow-2xl">
-                                    <Quote className="text-sky-400 mb-4" size={32} fill="currentColor" />
-                                    <p className="text-lg italic leading-relaxed font-medium">
-                                        “Today, my life has greater meaning… My experience of living with a disability in Canada gave me the opportunity to help those facing a similar reality.”
-                                    </p>
-                                </div>
+                                {/* Cita destacada (Blockquote) */}
+<div className="relative lg:absolute lg:-bottom-30 lg:left-1/2 lg:-translate-x-1/2 w-[95%] lg:w-[90%] bg-sky-700 text-white p-6 md:p-8 rounded-3xl shadow-2xl mt-6 lg:mt-0 mx-auto">
+    <Quote className="text-sky-400 mb-4" size={32} fill="currentColor" />
+    <p className="text-lg italic leading-relaxed font-medium">
+        “Today, my life has greater meaning… My experience of living with a disability in Canada gave me the opportunity to help those facing a similar reality.”
+    </p>
+</div>
                             </div>
                         </div>
                     </div>

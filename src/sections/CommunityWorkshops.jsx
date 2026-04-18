@@ -40,28 +40,49 @@ export default function CommunityWorkshops() {
     <section className="py-24 bg-white overflow-hidden text-slate-900">
       <div className="max-w-[1650px] px-6 md:px-10 lg:px-12 xl:px-16 2xl:px-20 mx-auto w-full">
         
-        {/* Header Section */}
+        {/* Header Section Corregido con Imagen */}
         <div 
           ref={refHeader}
-          className={`max-w-4xl mb-20 transition-all duration-1000 ${
+          className={`flex flex-col lg:flex-row gap-16 items-center mb-24 transition-all duration-1000 ${
             inViewHeader ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-100 text-sky-700 text-sm font-bold mb-6">
-            <Users size={16} /> Community Workshops
-          </div>
-          <h2 className="text-3xl font-semibold text-slate-900 mb-8 ">
-            How our distribution process works
-          </h2>
-          <p className="text-xl text-slate-600 leading-relaxed">
-            At Purinapaq - Mobility Without Borders, our workshops ensure that every device 
-            is personally matched and adapted to the individual, restoring independence and dignity.
-          </p>
+          {/* Lado Izquierdo: Texto */}
+          <div className="w-full lg:w-1/2">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-100 text-sky-700 text-sm font-bold mb-6">
+              <Users size={16} /> Community Workshops
+            </div>
+            <h2 className="text-3xl font-semibold text-slate-900 mb-8 leading-tight">
+              How our distribution process works
+            </h2>
+            <p className="text-xl text-slate-600 leading-relaxed mb-10">
+              At Purinapaq - Mobility Without Borders, our workshops ensure that every device 
+              is personally matched and adapted to the individual, restoring independence and dignity.
+            </p>
 
-          <div className="mt-10 p-6 bg-sky-50 rounded-[2rem] border border-sky-100 inline-block">
-             <p className="text-sky-800 font-medium italic">
-                "We establish formal agreements with local organizations to coordinate safe and effective distribution."
-             </p>
+            <div className="p-6 bg-sky-50 rounded-[2rem] border border-sky-100 border-dashed inline-block">
+               <p className="text-sky-800 font-medium italic">
+                 "We establish formal agreements with local organizations to coordinate safe and effective distribution."
+               </p>
+            </div>
+          </div>
+
+          {/* Lado Derecho: Imagen Número 11 */}
+          <div className="w-full lg:w-1/2">
+            <div className="relative">
+              <img 
+                src="/images/community.webp" 
+                alt="Community Workshop in action" 
+                className="rounded-3xl shadow-2xl w-full h-[450px] object-cover"
+                loading="lazy"
+              />
+              {/* Quote Box - Idéntico al diseño de About */}
+              <div className="absolute -bottom-6 -right-6 bg-sky-700 text-white p-8 rounded-2xl hidden md:block max-w-xs shadow-xl z-20">
+                <p className="italic font-medium">
+                  "We establish formal agreements to coordinate safe and effective distribution."
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -93,13 +114,13 @@ export default function CommunityWorkshops() {
                 <h3 className="text-2xl font-semibold text-slate-900 mb-4">
                   {step.title}
                 </h3>
-                <p className="text-slate-500 leading-relaxed">
+                <p className="text-slate-500 leading-relaxed mb-6">
                   {step.description}
                 </p>
 
                 {/* Status Indicator (Checkmark) */}
-                <div className="mt-auto pt-6">
-                    <div className="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-500">
+                <div className="mt-auto">
+                    <div className="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-500 mx-auto">
                         <CheckCircle size={20} fill="currentColor" className="text-white" />
                         <CheckCircle size={20} className="absolute" />
                     </div>
@@ -110,9 +131,9 @@ export default function CommunityWorkshops() {
         </div>
 
         {/* Final Impact Message */}
-        <div className="mt-20 text-center max-w-2xl mx-auto">
-            <p className="text-lg font-semibold text-sky-700  mb-4">Maximum Impact</p>
-            <p className="text-2xl font-semibold text-slate-800">
+        <div className="mt-24 text-center max-w-2xl mx-auto py-12 border-t border-slate-100">
+            <p className="text-lg font-semibold text-sky-700 mb-4 ">Maximum Impact</p>
+            <p className="text-2xl md:text-3xl font-semibold text-slate-900">
               Ensuring sustainability through refurbishing and reassignment.
             </p>
         </div>

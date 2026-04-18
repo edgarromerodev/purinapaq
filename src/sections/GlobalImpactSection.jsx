@@ -112,61 +112,59 @@ export default function GlobalImpactSection() {
                                 </div>
                             </div>
                         </div>
+                            {/* --- BLOQUE 3: SUSTAINABILITY & CAPACITY (ACTUALIZADO CON IMAGEN VERTICAL) --- */}
+<div 
+    ref={ref3}
+    className={`flex flex-col lg:flex-row items-center gap-16 transition-all duration-1000 ${
+        inView3 ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"
+    }`}
+>
+    {/* COLUMNA IZQUIERDA: IMAGEN VERTICAL ADAPTADA */}
+    <div className="w-full lg:w-1/2 flex justify-center">
+        <div className="relative group overflow-hidden rounded-[2.5rem]">
+            {/* Imagen Vertical: w-full, h-[600px], aspect-[3/4] y object-cover para no deformar */}
+            <img 
+                src="/images/electric-wheelchairs-impact.webp" // Asegúrate de cambiar el nombre al archivo vertical
+                alt="Global Impact through Electric Wheelchairs" 
+                className="w-full h-[600px] aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-105 shadow-2xl"
+                loading="lazy"
+            />
+            {/* Se ha eliminado el overlay de gradiente y el texto superpuesto */}
+            <div className="absolute inset-0 rounded-[2.5rem] ring-1 ring-inset ring-slate-900/10 transition-colors group-hover:ring-sky-500/20"></div>
+        </div>
+    </div>
 
-                        {/* --- BLOQUE 3: SUSTAINABILITY & CAPACITY --- */}
-                        <div 
-                            ref={ref3}
-                            className={`flex flex-col lg:flex-row items-center gap-16 transition-all duration-1000 ${
-                                inView3 ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"
-                            }`}
-                        >
-                            <div className="w-full lg:w-1/2">
-                                <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl group">
-                                    <img 
-                                        src="/images/sustainability-workshop.webp" 
-                                        alt="Sustainable Mobility" 
-                                        className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-110"
-                                        loading="lazy"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-sky-950/80 to-transparent"></div>
-                                    <div className="absolute bottom-10 left-10 text-white">
-                                        <Sprout size={48} className="text-sky-400 mb-4" />
-                                        <h4 className="text-2xl font-bold">Circular Economy</h4>
-                                        <p className="text-sky-200">Refurbished and reassigned for maximum impact.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="w-full lg:w-1/2">
-                                <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-sky-50 text-sky-700 rounded-full text-sm font-bold mb-6">
-                                    <Sprout size={16} /> Lasting Change
-                                </div>
-                                <h3 className="text-3xl font-semibold text-slate-900 mb-6">
-                                    3. Sustainable Mobility & Capacity Building
-                                </h3>
-                                <div className="space-y-6">
-                                    <div className="flex gap-4">
-                                        <div className="w-12 h-12 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center flex-shrink-0">
-                                            <GraduationCap size={24} />
-                                        </div>
-                                        <div>
-                                            <p className="text-lg font-bold text-slate-800">Knowledge Sharing</p>
-                                            <p className="text-slate-500">We train community workers and share expertise on mobility assistance.</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex gap-4">
-                                        <div className="w-12 h-12 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center flex-shrink-0">
-                                            <Sprout size={24} />
-                                        </div>
-                                        <div>
-                                            <p className="text-lg font-bold text-slate-800">Sustainable Workshops</p>
-                                            <p className="text-slate-500">Our reconditioning centers ensure devices remain in optimal condition for years.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+    {/* COLUMNA DERECHA: TEXTO (Mantenida igual) */}
+    <div className="w-full lg:w-1/2">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-sky-50 text-sky-700 rounded-full text-sm font-bold mb-6">
+            <Sprout size={16} /> Lasting Change
+        </div>
+        <h3 className="text-3xl font-semibold text-slate-900 mb-6 leading-tight">
+            3. Sustainable Mobility & Capacity Building
+        </h3>
+        <div className="space-y-6">
+            <div className="flex gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center flex-shrink-0">
+                    <GraduationCap size={24} />
+                </div>
+                <div>
+                    <p className="text-lg font-bold text-slate-800">Knowledge Sharing</p>
+                    <p className="text-slate-500">We train community workers and share expertise on mobility assistance.</p>
+                </div>
+            </div>
+            <div className="flex gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center flex-shrink-0">
+                    <Sprout size={24} />
+                </div>
+                <div>
+                    <p className="text-lg font-bold text-slate-800">Sustainable Workshops</p>
+                    <p className="text-slate-500">Our reconditioning centers ensure devices remain in optimal condition for years.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                      
                         {/* --- BLOQUE 4: WHY IT MATTERS (FINAL HEART) --- */}
                         <div 
                             ref={ref4}

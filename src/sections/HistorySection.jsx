@@ -78,7 +78,7 @@ export default function HistorySection() {
                             <div className="w-full lg:w-1/2">
                                 <div className="relative">
                                     <img 
-                                        src="/images/impacto-global.webp" 
+                                        src="/images/iniciativa-2026.webp" 
                                         loading="lazy"
                                         alt="Global Impact Containers" 
                                         className="rounded-3xl shadow-2xl w-full h-[450px] object-cover"
@@ -118,15 +118,11 @@ export default function HistorySection() {
                             <div className="w-full lg:w-1/2">
                                 <div className="relative overflow-hidden rounded-3xl group">
                                     <img 
-                                        src="/images/iniciativa-2026.webp" 
+                                        src="/images/donation.webp" 
                                         alt="2026 Initiative" 
                                         className="rounded-3xl shadow-2xl w-full h-[450px] object-cover transition-transform duration-700 group-hover:scale-105"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-sky-900/60 to-transparent"></div>
-                                    <div className="absolute bottom-8 left-8 text-white">
-                                        <Calendar size={48} className="mb-4 text-sky-400" />
-                                        <p className="text-2xl font-bold italic">"The Gift of Mobility"</p>
-                                    </div>
+                                  
                                 </div>
                             </div>
 

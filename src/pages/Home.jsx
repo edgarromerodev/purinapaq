@@ -6,6 +6,7 @@ import FeaturesSection from "../sections/FeaturesSection";
 import HeroSection from "../sections/HeroSection";
 
 import StatsSection from "../sections/StatsSection";
+import Testimonials from "../sections/Testimonials";
 import TestimonialsSection from "../sections/TestimonialsSection";
 
 export default function Home() {
@@ -17,7 +18,7 @@ export default function Home() {
             <StatsSection />
              <DonationCTA/>
             <FaqSection />
-            <TestimonialsSection/>
+             <Testimonials/>
             <ContactForm/>
         </main>
     );
