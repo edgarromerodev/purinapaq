@@ -33,7 +33,7 @@ export default function AboutSection() {
                     <div className="w-full lg:w-1/2">
                         <div className="relative">
                             <img 
-                                src="/images/fundador-jose.webp" 
+                                src="/images/about.webp" 
                                 alt="Founder José Orozco in a wheelchair, illustrating the lived experience behind Purinapaq" 
                                 className="rounded-3xl shadow-2xl w-full h-[450px] object-cover"
                                 loading="lazy"
