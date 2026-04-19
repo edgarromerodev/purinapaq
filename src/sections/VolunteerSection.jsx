@@ -93,7 +93,7 @@ export default function VolunteerSection() {
                                 />
                                 <div className="absolute -top-6 -left-6 bg-slate-900 text-white p-6 rounded-2xl hidden md:block shadow-xl border border-white/10">
                                     <Wrench className="text-sky-400 mb-2" size={32} />
-                                    <p className="text-sm font-bold uppercase tracking-widest">Hands-on Support</p>
+                                    <p className="text-xl font-semibold ">Hands-on Support</p>
                                 </div>
                             </div>
                         </div>

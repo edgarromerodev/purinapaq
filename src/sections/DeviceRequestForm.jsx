@@ -212,27 +212,38 @@ export default function DeviceRequestForm() {
                     {/* SIDEBAR CARDS */}
                     <div className="space-y-8">
                         <div className="bg-sky-800 rounded-[2.5rem] p-10 text-white relative overflow-hidden shadow-xl">
-                            <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
-                            <FileText className="mb-6 text-sky-300" size={48} />
-                            <h4 className="text-2xl font-semibold mb-6">Offline Application</h4>
-                            <p className="text-sky-100/80 mb-8 text-lg">
-                                You can also download, complete, and send the PDF form to our office.
-                            </p>
-                            <div className="space-y-6 text-sm">
-                                <div className="p-4 bg-white/5 rounded-2xl border border-white/10">
-                                    <p className="font-bold text-sky-300 uppercase text-[10px] mb-1">Email to:</p>
-                                    <p className="text-lg">request@purinapaq.org</p>
-                                </div>
-                                <div className="p-4 bg-white/5 rounded-2xl border border-white/10">
-                                    <p className="font-bold text-sky-300 uppercase text-[10px] mb-1">Mail to Office:</p>
-                                    <p className="text-sm leading-relaxed">
-                                        Purinapaq | Mobility without borders<br />
-                                        306-30 Elsinore Path<br />
-                                        Etobicoke, ON M8V 3Z6
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+        <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+        <FileText className="mb-6 text-sky-300" size={48} />
+        <h4 className="text-2xl font-semibold mb-6">Offline Application</h4>
+        <p className="text-sky-100/80 mb-8 text-lg">
+            You can also download, complete, and send the PDF form to our office.
+        </p>
+
+        
+        <a 
+            href="/forms/device-request.pdf" 
+            download="Device_Request_Form_Purinapaq.pdf"
+            className="inline-flex items-center justify-center w-full py-4 mb-8 bg-white text-sky-800 rounded-2xl font-bold text-base transition-all hover:bg-sky-50 active:scale-[0.98] shadow-lg gap-2"
+        >
+            <FileText size={20} />
+            Download PDF Form
+        </a>
+
+        <div className="space-y-6 text-sm">
+            <div className="p-4 bg-white/5 rounded-2xl border border-white/10">
+                <p className="font-bold text-sky-300 uppercase text-[10px] mb-1">Email to:</p>
+                <p className="text-lg">request@purinapaq.org</p>
+            </div>
+            <div className="p-4 bg-white/5 rounded-2xl border border-white/10">
+                <p className="font-bold text-sky-300 uppercase text-[10px] mb-1">Mail to Office:</p>
+                <p className="text-sm leading-relaxed">
+                    Purinapaq | Mobility without borders<br />
+                    306-30 Elsinore Path<br />
+                    Etobicoke, ON M8V 3Z6
+                </p>
+            </div>
+        </div>
+    </div>
 
                         <div className="bg-white rounded-[2.5rem] p-10 border border-sky-100 shadow-sm">
                             <Accessibility className="mb-4 text-sky-600" size={40} />
