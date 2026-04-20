@@ -7,7 +7,7 @@ export default function HeroSection() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center justify-center pt-24 pb-12 md:pb-20 lg:pb-28 overflow-hidden mt-20"
+      className="relative min-h-screen flex items-center justify-center pt-24 pb-12 md:pb-20 lg:pb-28 overflow-hidden mt-18"
       role="region"
       aria-label="Welcome section"
     >

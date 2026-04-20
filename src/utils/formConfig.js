@@ -10,9 +10,9 @@ export const PURINAPAQ_EMAILS = {
 
 /**
  * Función centralizada para enviar formularios
- * @param {FormData} formData - Los datos del formulario
- * @param {string} toEmail - Correo de destino
- * @param {string} subject - Asunto del correo
+ * @param {FormData} formData 
+ * @param {string} toEmail 
+ * @param {string} subject 
  */
 export const sendForm = async (formData, toEmail, subject) => {
   formData.append("access_key", WEB3FORMS_KEY);
