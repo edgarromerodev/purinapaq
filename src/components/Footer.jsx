@@ -145,7 +145,6 @@ export default function Footer() {
             className="text-sky-700 hover:text-sky-900 transition-colors font-bold flex items-center gap-1"
         >
             edukuk.com
-            <Heart size={10} className="text-red-500 fill-current animate-pulse" />
         </a>
 
         <span className="text-slate-400 uppercase">for Purinapaq</span>

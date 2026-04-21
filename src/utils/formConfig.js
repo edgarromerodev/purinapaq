@@ -18,7 +18,6 @@ export const sendForm = async (formData, toEmail, subject) => {
   formData.append("access_key", WEB3FORMS_KEY);
   formData.append("to", toEmail);
   formData.append("subject", subject);
-  // Opcional: Esto evita que los bots llenen el formulario
   formData.append("from_name", "Purinapaq Web System"); 
 
   const response = await fetch("https://api.web3forms.com/submit", {

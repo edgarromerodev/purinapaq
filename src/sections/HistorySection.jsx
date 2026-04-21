@@ -69,45 +69,69 @@ export default function HistorySection() {
                         </div>
 
                         {/* --- BLOQUE 2: IMPACTO INTERNACIONAL --- */}
-                        <div 
-                            ref={ref2}
-                            className={`flex flex-col lg:flex-row-reverse items-center gap-16 transition-all duration-1000 ${
-                                inView2 ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"
-                            }`}
-                        >
-                            <div className="w-full lg:w-1/2">
-                                <div className="relative">
-                                    <img 
-                                        src="/images/iniciativa-2026.webp" 
-                                        loading="lazy"
-                                        alt="Global Impact Containers" 
-                                        className="rounded-3xl shadow-2xl w-full h-[450px] object-cover"
-                                    />
-                                    <div className="absolute -bottom-6 -left-6 bg-slate-900 text-white p-6 rounded-2xl hidden md:block shadow-xl text-center min-w-[200px] border border-white/10">
-                                        <p className="text-5xl font-extrabold text-sky-400">+40</p>
-                                        <p className="text-xs uppercase tracking-widest font-bold mt-1">Containers Sent</p>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div className="w-full lg:w-1/2">
-                                <div className="inline-block px-4 py-1.5 bg-sky-50 text-sky-700 rounded-full text-sm font-bold mb-6">
-                                    Expansion and Achievements
-                                </div>
-                                <h3 className="text-3xl font-semibold text-slate-900 mb-6">
-                                    An international effort with significant social impact.
-                                </h3>
-                                <div className="space-y-4 text-slate-600 text-lg leading-relaxed">
-                                    <p>
-                                        What started as a personal mission is today a global movement. We have sent more than <strong className="text-slate-900">40 full containers</strong> of equipment to various countries, working with local organizations and workshops supported directly by Purinapaq.
-                                    </p>
-                                    <p>
-                                        We also provide local support in Canada to veterans, low-income individuals, and newcomers who do not have access to government aid, ensuring they regain their independence.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+<div 
+    ref={ref2}
+    className={`flex flex-col lg:flex-row-reverse items-center gap-16 transition-all duration-1000 ${
+        inView2 ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"
+    }`}
+>
+    <div className="w-full lg:w-1/2">
+        <div className="relative group flex flex-col gap-6">
+            {/* Contenedor de las dos imágenes simétricas */}
+            <div className="grid grid-cols-2 gap-4">
+                <img 
+                    src="/images/iniciativa-2026.webp" 
+                    alt="Global Impact 1" 
+                    className="rounded-[2rem] shadow-xl w-full h-[350px] object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                    loading="lazy"
+                />
+                <img 
+                    src="/images/07-embarque-contenedor-1.webp" 
+                    alt="Global Impact 2" 
+                    className="rounded-[2rem] shadow-xl w-full h-[350px] object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                    loading="lazy"
+                />
+            </div>
 
+            {/* Cuadro de impacto oscuro debajo de las fotos */}
+            <div className="bg-slate-900 text-white p-6 rounded-3xl shadow-xl border border-white/10 w-full">
+                <div className="flex items-center gap-4">
+                    <div className="flex flex-col">
+                        <p className="text-4xl font-extrabold text-sky-400 leading-none">+40</p>
+                        <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-400 mt-1">Containers Sent</p>
+                    </div>
+                    <div className="w-px h-12 bg-white/10 mx-2"></div>
+                    <p className="font-semibold italic text-lg leading-snug">
+                        "An international effort delivering hope and mobility to multiple countries."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div className="w-full lg:w-1/2">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-sky-50 text-sky-700 rounded-full text-sm font-bold mb-6">
+            <Ship size={16} /> International Impact
+        </div>
+        <h3 className="text-3xl font-semibold text-slate-900 mb-6">
+            Expansion and Achievements
+        </h3>
+        <p className="text-slate-600 text-xl leading-relaxed mb-6">
+            What started as a personal mission is today a global movement, reaching underserved communities through dedicated logistics.
+        </p>
+        <div className="space-y-4">
+            <div className="flex items-start gap-4">
+                <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mt-1 flex-shrink-0 text-xs font-bold">✓</div>
+                <p className="text-slate-500 font-medium">More than 40 full containers sent internationally.</p>
+            </div>
+            <div className="flex items-start gap-4">
+                <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mt-1 flex-shrink-0 text-xs font-bold">✓</div>
+                <p className="text-slate-500 font-medium">Support for veterans and newcomers in Canada.</p>
+            </div>
+        </div>
+    </div>
+</div>
                         {/* --- BLOQUE 3: INICIATIVA 2026 --- */}
                         <div 
                             ref={ref3}
