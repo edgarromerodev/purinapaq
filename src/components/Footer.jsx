@@ -130,14 +130,27 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom Bar (Igual) */}
-                <div className="py-10 flex flex-col md:flex-row justify-between items-center gap-6 text-[11px] font-medium tracking-wide">
-                    <p className="text-slate-400">© {currentYear} Purinapaq. All rights reserved.</p>
-                    <div className="flex items-center gap-1.5 bg-white px-4 py-2 rounded-full border border-slate-100 shadow-sm">
-                        <span className="text-slate-400 uppercase">Developed with</span>
-                        <Heart size={12} className="text-red-500 fill-current animate-pulse" />
-                        <span className="text-slate-400 uppercase">for Purinapaq</span>
-                    </div>
-                </div>
+{/* Bottom Bar */}
+<div className="py-10 flex flex-col md:flex-row justify-between items-center gap-6 text-[11px] font-medium tracking-wide">
+    <p className="text-slate-400">© {currentYear} Purinapaq. All rights reserved.</p>
+    
+    <div className="flex items-center gap-1.5 bg-white px-4 py-2 rounded-full border border-slate-100 shadow-sm">
+        <span className="text-slate-400 uppercase">Developed by</span>
+        
+        {/* Tu enlace personalizado */}
+        <a 
+            href="https://edukuk.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-sky-700 hover:text-sky-900 transition-colors font-bold flex items-center gap-1"
+        >
+            edukuk.com
+            <Heart size={10} className="text-red-500 fill-current animate-pulse" />
+        </a>
+
+        <span className="text-slate-400 uppercase">for Purinapaq</span>
+    </div>
+</div>
             </div>
 
             {/* NOTIFICACIÓN FLOTANTE (ESTILO DONACIONES/CONTACTO) */}
