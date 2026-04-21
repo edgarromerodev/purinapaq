@@ -19,6 +19,7 @@ import NewsStories from "./sections/NewsStories";
 import PrivacyPolicy from "./sections/PrivacyPolicy";
 import TermsConditions from "./sections/TermsConditions";
 import GallerySection from "./sections/GallerySection";
+import Testimonials from "./sections/Testimonials";
 
 
 export default function App() {
@@ -36,7 +37,7 @@ export default function App() {
                 <Route path="/request-equipment" element={<DeviceRequestForm/>} />
                 <Route path="/workshops" element={<CommunityWorkshops/>} />
                 <Route path="/global-impact" element={<GlobalImpactSection/>} />
-                <Route path="/testimonials" element={<TestimonialsSection/>} />
+                <Route path="/testimonials" element={<Testimonials/>} />
                 <Route path="/gallery" element={<GallerySection/>} />
                   <Route path="/donate" element={<DonationsPage/>} />
                 <Route path="/equipment-donations" element={<EquipmentDonation />} />

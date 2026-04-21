@@ -32,7 +32,7 @@ export default function NewsStories() {
                         Moments that define our work.
                     </h2>
                     <p className="text-xl text-slate-600 leading-relaxed">
-                        At Purinapaq - Mobility Without Borders, every initiative, every shipment, and every donation
+                        At Purinapaq Mobility Without Borders, every initiative, every shipment, and every donation
                         has a story behind it. This section shares the lives that are transformed through mobility.
                     </p>
                 </header>
@@ -66,7 +66,7 @@ export default function NewsStories() {
                                     src="/images/story-impact.webp" 
                                     alt="A student smiling with their new mobility device" 
                                     loading="lazy" 
-                                    className="rounded-[2.5rem] shadow-2xl w-full h-[450px] object-cover"
+                                    className="rounded-[2.5rem] shadow-2xl w-full h-[480px] object-cover"
                                 />
                                 <figcaption className="sr-only">Student returning to school after receiving a donation</figcaption>
                             </figure>

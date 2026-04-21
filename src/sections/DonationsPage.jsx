@@ -53,8 +53,8 @@ export default function DonationsPage() {
                                     of equipment donated is handled with <strong>care, responsibility, and purpose.</strong>
                                 </p>
                                 <p>
-                                    The impact of your support is truly transformative. When someone receives a mobility device, 
-                                    they gain more than movement—they gain <strong>independence, dignity, and new opportunities.</strong>
+                                    The impact of your support is truly transformative. When someone receives a mobility device, they gain more than movement.
+                                    They gain <strong>independence, dignity, and new opportunities.</strong>
                                 </p>
                             </div>
                         </div>
@@ -66,7 +66,7 @@ export default function DonationsPage() {
                                     src="/images/impact-donation.webp" 
                                     alt="Impact of donations" 
                                     loading="lazy"
-                                    className="rounded-3xl shadow-2xl w-full h-[450px] object-cover"
+                                    className="rounded-3xl shadow-2xl w-full h-[498px] object-cover"
                                 />
                                 <div className="absolute -bottom-6 -right-6 bg-sky-700 text-white p-8 rounded-2xl hidden xl:block max-w-xs shadow-xl">
                                     <p className="italic font-medium text-sm">

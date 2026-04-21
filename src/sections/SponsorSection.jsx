@@ -38,14 +38,14 @@ export default function SponsorSection() {
                         inViewHeader ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                     }`}
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-100 text-sky-700 text-sm font-bold mb-6 uppercase tracking-wider">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-100 text-sky-700 text-sm font-bold mb-6 ">
                         <Building2 size={16} fill="currentColor" aria-hidden="true" /> Partner With Us
                     </div>
-                    <h2 id="sponsor-title" className="text-4xl md:text-5xl font-semibold text-slate-900 mb-8">
+                    <h2 id="sponsor-title" className="text-3xl font-semibold text-slate-900 mb-8">
                         Sponsor the Journey.
                     </h2>
                     <p className="text-xl text-slate-600 leading-relaxed">
-                        At Purinapaq – Mobility Without Borders, partnerships are essential to expanding our impact. 
+                        At Purinapaq Mobility Without Borders, partnerships are essential to expanding our impact. 
                         By becoming a sponsor, you play a direct role in <strong>restoring mobility, independence, and dignity</strong> to people living with disabilities.
                     </p>
                 </header>
@@ -76,9 +76,9 @@ export default function SponsorSection() {
                         </div>
 
                         <div className="w-full lg:w-1/2">
-                            <h3 className="text-3xl font-bold text-slate-900 mb-6">Why Partner with Us</h3>
+                            <h3 className="text-3xl font-semibold text-slate-900 mb-6">Why Partner with Us</h3>
                             <p className="text-lg text-slate-600 mb-8">
-                                Your organization can make a meaningful difference by supporting initiatives that deliver life-changing equipment to underserved communities.
+                                Your organization can make a meaningful difference by supporting initiatives that deliver life, changing equipment to underserved communities.
                             </p>
                             <ul className="space-y-5" aria-label="Benefits of sponsorship">
                                 {benefits.map((benefit, idx) => (

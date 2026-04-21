@@ -2,7 +2,45 @@ import React from "react";
 import { ImageIcon } from "lucide-react";
 
 export default function GallerySection() {
+    // --- DATOS DE LA GALERÍA (Actualizados con los más recientes primero) ---
     const galleryItems = [
+        // --- NUEVOS: Last shipment arrived in South America – February 2026 ---
+        { 
+            title: "Container Arrival", 
+            description: "Successful arrival of our first major donation container in South America (Feb 2026).", 
+            image: "/images/07-embarque-contenedor-1.webp" 
+        },
+        { 
+            title: "Destination Reception", 
+            description: "Local team receiving and organizing the newly arrived mobility equipment.", 
+            image: "/images/08-recepcion-equipo-destino-7b.webp" 
+        },
+
+        // --- NUEVO: New shipment in transit - April 2026 ---
+        { 
+            title: "Shipment in Transit", 
+            description: "Loading our third donation container, now on its way to transform lives (April 2026).", 
+            image: "/images/57-embarque-contenedor-3.webp" 
+        },
+
+        // --- NUEVOS: From Collection to Delivery ---
+        { 
+            title: "Toronto Collection", 
+            description: "Our volunteers collecting donated wheelchairs and walkers across Toronto.", 
+            image: "/images/45-recojo-de-equipos-toronto.webp" 
+        },
+        { 
+            title: "Equipment Delivery", 
+            description: "Final verification and setup of custom equipment at the destination point.", 
+            image: "/images/53-recepcion-equipo-destino-5.webp" 
+        },
+        { 
+            title: "Christian's Mobility", 
+            description: "Personalized support and technical fitting for Christian, ensuring autonomy.", 
+            image: "/images/15-christian.webp" 
+        },
+
+        // --- ANTERIORES (Ordenados después) ---
         { title: "Local Support", description: "Direct assistance to families in our immediate community.", image: "/images/gallery1.webp" },
         { title: "Mobility First", description: "Delivering customized wheelchairs for specific physical needs.", image: "/images/gallery2.webp" },
         { title: "Expert Training", description: "Specialized workshops for our local volunteers and staff.", image: "/images/gallery3.webp" },
@@ -32,7 +70,7 @@ export default function GallerySection() {
                     <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-100 text-sky-700 text-sm font-bold mb-6 ">
                         <ImageIcon size={16} /> Our Gallery
                     </div>
-                    <h2 className="text-3xl  font-semibold text-slate-900 mb-4">
+                    <h2 className="text-3xl font-semibold text-slate-900 mb-4">
                         Moments of Impact
                     </h2>
                     <p className="text-slate-500 max-w-2xl mx-auto text-lg leading-relaxed">

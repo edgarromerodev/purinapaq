@@ -69,49 +69,65 @@ export default function GlobalImpactSection() {
                         </div>
 
                         {/* --- BLOQUE 2: LOCAL PARTNERSHIPS --- */}
-                        <div 
-                            ref={ref2}
-                            className={`flex flex-col lg:flex-row-reverse items-center gap-16 transition-all duration-1000 ${
-                                inView2 ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"
-                            }`}
-                        >
-                            <div className="w-full lg:w-1/2">
-                                <div className="relative group">
-                                    <img 
-                                        src="/images/local-partners.webp" 
-                                        alt="Local Partnerships" 
-                                        className="rounded-[2.5rem] shadow-2xl w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
-                                        loading="lazy"
-                                    />
-                                    <div className="absolute top-8 -left-8 bg-slate-900 text-white p-6 rounded-3xl hidden md:block shadow-xl border border-white/10 max-w-[240px]">
-                                        <Handshake size={32} className="text-sky-400 mb-3" />
-                                        <p className="font-semibold italic">"We collaborate with trusted local organizations in each recipient country."</p>
-                                    </div>
-                                </div>
-                            </div>
+                        {/* --- BLOQUE 2: LOCAL PARTNERSHIPS --- */}
+<div 
+    ref={ref2}
+    className={`flex flex-col lg:flex-row-reverse items-center gap-16 transition-all duration-1000 ${
+        inView2 ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"
+    }`}
+>
+    <div className="w-full lg:w-1/2">
+        <div className="relative group flex flex-col gap-6">
+            {/* Contenedor de las dos imágenes */}
+            <div className="grid grid-cols-2 gap-4">
+                <img 
+                    src="/images/local-partners-1.webp" 
+                    alt="Local Partnerships 1" 
+                    className="rounded-[2rem] shadow-xl w-full h-[350px] object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                    loading="lazy"
+                />
+                <img 
+                    src="/images/local-partners-2.webp" 
+                    alt="Local Partnerships 2" 
+                    className="rounded-[2rem] shadow-xl w-full h-[350px] object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                    loading="lazy"
+                />
+            </div>
 
-                            <div className="w-full lg:w-1/2">
-                                <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-sky-50 text-sky-700 rounded-full text-sm font-bold mb-6">
-                                    <Handshake size={16} /> Trusted Networks
-                                </div>
-                                <h3 className="text-3xl font-semibold text-slate-900 mb-6">
-                                    2. Local Partnerships
-                                </h3>
-                                <p className="text-slate-600 text-xl leading-relaxed mb-6">
-                                    In each recipient country, we collaborate with local organizations to coordinate distribution and provide follow-up support.
-                                </p>
-                                <div className="space-y-4">
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mt-1 flex-shrink-0">✓</div>
-                                        <p className="text-slate-500">Coordinated distribution logistics</p>
-                                    </div>
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mt-1 flex-shrink-0">✓</div>
-                                        <p className="text-slate-500">Continuous follow-up and user support</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            {/* Texto movido a la parte inferior (fuera de la imagen) */}
+            <div className="bg-slate-900 text-white p-6 rounded-3xl shadow-xl border border-white/10 w-full">
+                <div className="flex items-center gap-4">
+                    <Handshake size={32} className="text-sky-400 flex-shrink-0" />
+                    <p className="font-semibold italic text-lg">
+                        "We collaborate with trusted local organizations in each recipient country."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div className="w-full lg:w-1/2">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-sky-50 text-sky-700 rounded-full text-sm font-bold mb-6">
+            <Handshake size={16} /> Trusted Networks
+        </div>
+        <h3 className="text-3xl font-semibold text-slate-900 mb-6">
+            2. Local Partnerships
+        </h3>
+        <p className="text-slate-600 text-xl leading-relaxed mb-6">
+            In each recipient country, we collaborate with local organizations to coordinate distribution and provide follow-up support.
+        </p>
+        <div className="space-y-4">
+            <div className="flex items-start gap-4">
+                <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mt-1 flex-shrink-0">✓</div>
+                <p className="text-slate-500">Coordinated distribution logistics</p>
+            </div>
+            <div className="flex items-start gap-4">
+                <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mt-1 flex-shrink-0">✓</div>
+                <p className="text-slate-500">Continuous follow-up and user support</p>
+            </div>
+        </div>
+    </div>
+</div>
                             {/* --- BLOQUE 3: SUSTAINABILITY & CAPACITY (ACTUALIZADO CON IMAGEN VERTICAL) --- */}
 <div 
     ref={ref3}

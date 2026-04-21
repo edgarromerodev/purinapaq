@@ -1,18 +1,58 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 // Importamos todos los iconos necesarios para evitar errores de definición
 import { 
     Users, Heart, Star, Wrench, Globe, 
-    CheckCircle2, Mail, Info, MapPin, Phone, MessageSquare 
+    CheckCircle2, Mail, Info, MapPin, Phone, MessageSquare, X 
 } from "lucide-react";
+import { sendForm, PURINAPAQ_EMAILS } from "../utils/formConfig";
 
 export default function VolunteerSection() {
+
     const { ref: ref1, inView: inView1 } = useInView({ triggerOnce: true, threshold: 0.2 });
     const { ref: ref2, inView: inView2 } = useInView({ triggerOnce: true, threshold: 0.2 });
     const { ref: ref3, inView: inView3 } = useInView({ triggerOnce: true, threshold: 0.2 });
     // Ref adicional para la animación del formulario
     const { ref: refForm, inView: inViewForm } = useInView({ triggerOnce: true, threshold: 0.1 });
+// --- ESTADOS PARA ENVÍO Y NOTIFICACIÓN ---
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [status, setStatus] = useState(null); // 'success' | 'error' | null
 
+    // Auto-cerrar notificación
+    useEffect(() => {
+        if (status) {
+            const timer = setTimeout(() => setStatus(null), 5000);
+            return () => clearTimeout(timer);
+        }
+    }, [status]);
+
+    // --- MANEJADOR DE ENVÍO ---
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setStatus(null);
+
+        const formData = new FormData(e.target);
+        
+        try {
+            const result = await sendForm(
+                formData, 
+                PURINAPAQ_EMAILS.CONTACT, 
+                "New Volunteer Inquiry"
+            );
+
+            if (result.success) {
+                setStatus("success");
+                e.target.reset();
+            } else {
+                setStatus("error");
+            }
+        } catch (error) {
+            setStatus("error");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
     const volunteerWays = [
         "Assisting in the collection and sorting of donated equipment",
         "Supporting refurbishment and workshop activities",
@@ -27,14 +67,14 @@ export default function VolunteerSection() {
                 
                 {/* --- HEADER PRINCIPAL --- */}
                 <div className="text-center max-w-3xl mx-auto mb-24">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-100 text-sky-700 text-sm font-bold mb-6 uppercase tracking-wider">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-100 text-sky-700 text-sm font-bold mb-6 ">
                         <Users size={16} fill="currentColor" /> Become a Volunteer
                     </div>
                     <h2 className="text-3xl font-semibold text-slate-900 mb-6">
                         The Heart of Our Mission
                     </h2>
                     <p className="text-xl text-slate-500 leading-relaxed">
-                        At Purinapaq – Mobility Without Borders, our volunteers make it possible to restore independence to individuals living with disabilities.
+                        At Purinapaq Mobility Without Borders, our volunteers make it possible to restore independence to individuals living with disabilities.
                     </p>
                 </div>
 
@@ -78,38 +118,43 @@ export default function VolunteerSection() {
                     </div>
 
                     {/* --- BLOQUE 2: WAYS TO INVOLVE --- */}
-                    <div 
-                        ref={ref2}
-                        className={`flex flex-col lg:flex-row-reverse items-center gap-16 transition-all duration-1000 ${
-                            inView2 ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"
-                        }`}
-                    >
-                        <div className="w-full lg:w-1/2">
-                            <div className="relative">
-                                <img 
-                                    src="/images/volunteer-work.webp" 
-                                    alt="Technical workshop" 
-                                    className="rounded-3xl shadow-2xl w-full h-[500px] object-cover"
-                                />
-                                <div className="absolute -top-6 -left-6 bg-slate-900 text-white p-6 rounded-2xl hidden md:block shadow-xl border border-white/10">
-                                    <Wrench className="text-sky-400 mb-2" size={32} />
-                                    <p className="text-xl font-semibold ">Hands-on Support</p>
-                                </div>
-                            </div>
-                        </div>
+                  {/* --- BLOQUE 2: WAYS TO INVOLVE --- */}
+<div 
+    ref={ref2}
+    className={`flex flex-col lg:flex-row-reverse items-center gap-16 transition-all duration-1000 ${
+        inView2 ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"
+    }`}
+>
+    <div className="w-full lg:w-1/2">
+        <div className="relative group">
+            <img 
+                src="/images/volunteer-work.webp" 
+                alt="Technical workshop" 
+                className="rounded-[2.5rem] shadow-2xl w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            {/* TEXTO CORREGIDO: Ahora en la parte inferior derecha para mayor profesionalismo */}
+            <div className="absolute -bottom-6 -right-6 bg-slate-900 text-white p-8 rounded-3xl hidden md:flex items-center gap-4 shadow-xl border border-white/10">
+                <Wrench className="text-sky-400" size={32} />
+                <div>
+                    <p className="text-2xl font-semibold">Hands-on Support</p>
+                    <p className="text-slate-400 text-sm">Direct impact in our workshop</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                        <div className="w-full lg:w-1/2">
-                            <h3 className="text-3xl font-semibold text-slate-900 mb-6">Ways to Get Involved</h3>
-                            <ul className="space-y-4">
-                                {volunteerWays.map((way, index) => (
-                                    <li key={index} className="flex gap-4 items-start text-lg text-slate-600">
-                                        <CheckCircle2 className="text-sky-600 mt-1 shrink-0" size={22} />
-                                        <span>{way}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
+    <div className="w-full lg:w-1/2">
+        <h3 className="text-3xl font-semibold text-slate-900 mb-6">Ways to Get Involved</h3>
+        <ul className="space-y-4">
+            {volunteerWays.map((way, index) => (
+                <li key={index} className="flex gap-4 items-start text-lg text-slate-600">
+                    <CheckCircle2 className="text-sky-600 mt-1 shrink-0" size={22} />
+                    <span>{way}</span>
+                </li>
+            ))}
+        </ul>
+    </div>
+</div>
 
                     {/* --- BLOQUE 3: WHY VOLUNTEER --- */}
                     <div 
@@ -158,30 +203,29 @@ export default function VolunteerSection() {
                                     Please complete the form below. We’d love to hear from you and discover how you can join Purinapaq.
                                 </p>
                             </div>
-
-                            <form className="space-y-10">
+                                <form onSubmit={handleSubmit} className="space-y-10">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="space-y-2">
                                         <label className="text-xs font-bold text-slate-500 uppercase ml-1">Your Name *</label>
-                                        <input type="text" required className="w-full px-5 py-4 bg-white border border-slate-200 rounded-2xl focus:border-sky-600 focus:ring-4 focus:ring-sky-600/5 outline-none transition-all" />
+                                        <input name="from_name" type="text" required disabled={isSubmitting} className="w-full px-5 py-4 bg-white border border-slate-200 rounded-2xl focus:border-sky-600 focus:ring-4 focus:ring-sky-600/5 outline-none transition-all disabled:opacity-50" />
                                     </div>
                                     <div className="space-y-2">
                                         <label className="text-xs font-bold text-slate-500 uppercase ml-1">E-mail *</label>
-                                        <input type="email" required className="w-full px-5 py-4 bg-white border border-slate-200 rounded-2xl focus:border-sky-600 outline-none" />
+                                        <input name="reply_to" type="email" required disabled={isSubmitting} className="w-full px-5 py-4 bg-white border border-slate-200 rounded-2xl focus:border-sky-600 outline-none disabled:opacity-50" />
                                     </div>
                                     <div className="space-y-2 md:col-span-2">
                                         <label className="text-xs font-bold text-slate-500 uppercase ml-1">Subject *</label>
-                                        <input type="text" required className="w-full px-5 py-4 bg-white border border-slate-200 rounded-2xl focus:border-sky-600 outline-none" />
+                                        <input name="subject" type="text" required disabled={isSubmitting} className="w-full px-5 py-4 bg-white border border-slate-200 rounded-2xl focus:border-sky-600 outline-none disabled:opacity-50" />
                                     </div>
                                     <div className="space-y-2 md:col-span-2">
                                         <label className="text-xs font-bold text-slate-500 uppercase ml-1">Comment *</label>
-                                        <textarea rows="4" required className="w-full px-5 py-4 bg-white border border-slate-200 rounded-2xl focus:border-sky-600 outline-none resize-none"></textarea>
+                                        <textarea name="message" rows="4" required disabled={isSubmitting} className="w-full px-5 py-4 bg-white border border-slate-200 rounded-2xl focus:border-sky-600 outline-none resize-none disabled:opacity-50"></textarea>
                                     </div>
                                 </div>
 
                                 <div className="space-y-4">
                                     <label className="flex items-start gap-3 cursor-pointer group">
-                                        <input type="checkbox" required className="w-5 h-5 accent-sky-700 mt-1" />
+                                        <input type="checkbox" required disabled={isSubmitting} className="w-5 h-5 accent-sky-700 mt-1" />
                                         <span className="text-sm text-slate-600 leading-relaxed">
                                             Yes, I would like the opportunity to receive information from Purinapaq Mobility without borders. 
                                             <br /><span className="text-xs italic text-slate-400">* I understand that I may later withdraw my consent.</span>
@@ -189,10 +233,24 @@ export default function VolunteerSection() {
                                     </label>
                                 </div>
 
-                                <button type="submit" className="w-full py-5 bg-sky-700 hover:bg-slate-900 text-white rounded-[1.5rem] font-bold text-lg transition-all shadow-xl shadow-sky-700/20 active:scale-[0.98] flex items-center justify-center gap-3">
-                                    <Mail size={20} /> Send Message
+                                <button 
+                                    type="submit" 
+                                    disabled={isSubmitting}
+                                    className="w-full py-5 bg-sky-700 hover:bg-slate-900 text-white rounded-[1.5rem] font-bold text-lg transition-all shadow-xl shadow-sky-700/20 active:scale-[0.98] flex items-center justify-center gap-3 disabled:bg-slate-400 disabled:shadow-none"
+                                >
+                                    {isSubmitting ? (
+                                        <>
+                                            <Loader2 size={20} className="animate-spin" />
+                                            Sending...
+                                        </>
+                                    ) : (
+                                        <>
+                                            <Mail size={20} /> Send Message
+                                        </>
+                                    )}
                                 </button>
                             </form>
+                           
                         </div>
 
                         {/* INFORMACIÓN DE CONTACTO / LEGAL */}
@@ -231,6 +289,25 @@ export default function VolunteerSection() {
                     </div>
                 </div>
             </div>
+            {/* NOTIFICACIÓN FLOTANTE */}
+            {status && (
+                <div className={`fixed bottom-10 right-10 z-[100] p-6 rounded-2xl shadow-2xl flex items-center gap-4 animate-in fade-in slide-in-from-bottom-5 duration-300 ${
+                    status === "success" ? "bg-emerald-600 text-white" : "bg-red-600 text-white"
+                }`}>
+                    {status === "success" ? <SuccessIcon size={24} /> : <AlertCircle size={24} />}
+                    <div>
+                        <p className="font-bold">{status === "success" ? "Message Sent!" : "Error"}</p>
+                        <p className="text-sm opacity-90">
+                            {status === "success" 
+                                ? "We'll get back to you as soon as possible." 
+                                : "Something went wrong. Please try again."}
+                        </p>
+                    </div>
+                    <button onClick={() => setStatus(null)} className="ml-2 hover:opacity-70 transition-opacity">
+                        <X size={18} />
+                    </button>
+                </div>
+            )}
         </section>
     );
 }

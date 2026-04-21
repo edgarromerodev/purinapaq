@@ -20,7 +20,7 @@ export default function HeroSection() {
           />
 
           <img
-            src="/images/hero-desktop.webp"
+            src="/images/hero-desktop1.webp"
             alt="A young man receiving mobility assistance from Purinapaq"
             className="
               w-full h-full
