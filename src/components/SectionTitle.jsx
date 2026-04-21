@@ -9,7 +9,7 @@ export default function SectionTitle({ text1, text2, text3 }) {
                 {text2}
             </h3>
 
-            <p className="text-sm text-slate-500 text-center mt-4 max-w-lg mx-auto">
+            <p className="text-xl text-slate-500 text-center mt-4 max-w-lg mx-auto">
                 {text3}
             </p>
         </>

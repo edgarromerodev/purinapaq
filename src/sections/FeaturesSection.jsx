@@ -23,9 +23,8 @@ export default function AboutSection() {
                 
                 {/* Título de la Sección - Manteniendo la estructura de SectionTitle */}
                 <SectionTitle 
-                    text1="About Us" 
-                    text2="Purinapaq" 
-                    text3="Mobility Without Borders"
+                    text2="Help children and adults with disabilities live more independent and dignity." 
+                    text3="You can make a difference today"
                 />
 
                 <div className="mt-24 flex flex-col lg:flex-row items-center gap-16">
