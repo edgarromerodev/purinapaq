@@ -48,7 +48,17 @@ export default function Navbar() {
                 { name: "Partner With Us - Sponsor", href: "/sponsor" },
             ]
         },
-        { name: "News & Stories", href: "/news" },
+       
+{ 
+    name: "News & Stories", 
+    href: "/news", 
+    hasSubmenu: true, 
+    subLinks: [
+        { name: "Impact Stories", href: "/news#story-1-title" },
+        { name: "Latest Updates", href: "/news#story-2-title" },
+        { name: "Our Journey", href: "/news#story-3-title" },
+    ] 
+},
         { name: "Contact", href: "#contacto" },
     ];
 

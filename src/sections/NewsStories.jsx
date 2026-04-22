@@ -5,13 +5,12 @@ import { useNavigate } from "react-router-dom";
 
 export default function NewsStories() {
     const navigate = useNavigate();
-    // Referencias para las animaciones
-    const { ref: refHeader, inView: inViewHeader } = useInView({ triggerOnce: true, threshold: 0.2 });
-    const { ref: ref1, inView: inView1 } = useInView({ triggerOnce: true, threshold: 0.2 });
-    const { ref: ref2, inView: inView2 } = useInView({ triggerOnce: true, threshold: 0.2 });
-    const { ref: ref3, inView: inView3 } = useInView({ triggerOnce: true, threshold: 0.2 });
-    // Nueva referencia para el bloque de 3 imágenes
-    const { ref: ref4, inView: inView4 } = useInView({ triggerOnce: true, threshold: 0.2 });
+
+    // Animaciones
+    const { ref: refHeader, inView: inViewHeader } = useInView({ triggerOnce: true, threshold: 0.1 });
+    const { ref: ref1, inView: inView1 } = useInView({ triggerOnce: true, threshold: 0.1 });
+    const { ref: ref2, inView: inView2 } = useInView({ triggerOnce: true, threshold: 0.1 });
+    const { ref: ref3, inView: inView3 } = useInView({ triggerOnce: true, threshold: 0.1 });
 
     return (
         <section 
@@ -21,44 +20,44 @@ export default function NewsStories() {
         >
             <div className="max-w-[1650px] px-6 md:px-10 lg:px-12 xl:px-16 2xl:px-20 mx-auto w-full">
                 
-                {/* --- HEADER (SEO: h2 principal con descripción) --- */}
+                {/* --- HEADER --- */}
                 <header 
                     ref={refHeader}
                     className={`max-w-4xl mb-24 transition-all duration-1000 ${
                         inViewHeader ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                     }`}
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-100 text-sky-700 text-sm font-semibold mb-6 ">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-100 text-sky-700 text-sm font-semibold mb-6">
                         <BookOpen size={16} fill="currentColor" aria-hidden="true" /> News & Stories
                     </div>
-                    <h2 id="stories-main-title" className="text-3xl font-semibold text-slate-900 mb-8">
+                    <h2 id="stories-main-title" className="text-3xl font-semibold text-slate-900 mb-8 tracking-tight">
                         Moments that define our work.
                     </h2>
-                    <p className="text-xl text-slate-600 leading-relaxed">
-                        At Purinapaq Mobility Without Borders, every initiative, every shipment, and every donation
-                        has a story behind it. This section shares the lives that are transformed through mobility.
+                    <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">
+                        At Purinapaq - Mobility Without Borders, every initiative, every shipment, and every donation
+                        has a story behind it. This section shares the moments that define our work and the lives that
+                        are transformed through mobility.
                     </p>
                 </header>
 
-                <div className="space-y-32">
+                <div className="space-y-40">
                     
-                    {/* --- HISTORIA 1: IMPACT (Imagen Derecha) --- */}
-                    <article 
+                    {/* --- ARTÍCULO 1: STORIES OF IMPACT --- */}
+                    <article id="story-1-title"
                         ref={ref1}
                         className={`flex flex-col lg:flex-row items-center gap-16 transition-all duration-1000 ${
                             inView1 ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"
                         }`}
-                        aria-labelledby="story-1-title"
                     >
                         <div className="w-full lg:w-1/2">
-                            <h3 id="story-1-title" className="text-2xl font-semibold text-slate-900 mb-6">Stories of Impact</h3>
-                            <p className="text-lg text-slate-600 leading-relaxed mb-6">
+                            <h3 className="text-3xl font-semibold text-slate-900 mb-6">Stories of Impact</h3>
+                            <p className="text-lg text-slate-600 leading-relaxed mb-8">
                                 Discover the journeys of individuals who have regained independence through access to
-                                mobility devices. From students returning to school to families experiencing renewed hope.
+                                mobility devices. From students returning to school to families experiencing renewed hope, 
+                                these stories reflect the true meaning of our mission.
                             </p>
                             <button onClick={() => navigate("/history")}  
-                                className="group flex items-center gap-2 text-sky-700 font-bold hover:text-sky-900 transition-colors"
-                                aria-label="Read more about our impact stories"
+                                className="group flex items-center gap-2 text-sky-700 font-bold hover:text-sky-900 transition-colors bg-sky-50 px-6 py-3 rounded-full"
                             >
                                 View all stories <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
                             </button>
@@ -67,156 +66,99 @@ export default function NewsStories() {
                             <figure className="relative">
                                 <img 
                                     src="/images/story-impact.webp" 
-                                    alt="A student smiling with their new mobility device" 
-                                    loading="lazy" 
-                                    className="rounded-[2.5rem] shadow-2xl w-full h-[480px] object-cover"
+                                    alt="Impact story" 
+                                    className="rounded-[3rem] shadow-2xl w-full h-[500px] object-cover"
                                 />
-                                <figcaption className="sr-only">Student returning to school after receiving a donation</figcaption>
+                                <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-3xl shadow-xl hidden md:block max-w-xs">
+                                    <p className="text-sm italic text-slate-500">"Mobility is the first step toward independence."</p>
+                                </div>
                             </figure>
                         </div>
                     </article>
 
-                    {/* --- HISTORIA 2: UPDATES (Imagen Izquierda - 2 FOTOS) --- */}
-                    <article 
+                    {/* --- ARTÍCULO 2: LATEST UPDATES --- */}
+                    <article id="story-2-title"
                         ref={ref2}
                         className={`flex flex-col lg:flex-row-reverse items-center gap-16 transition-all duration-1000 ${
                             inView2 ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"
                         }`}
-                        aria-labelledby="story-2-title"
                     >
                         <div className="w-full lg:w-1/2">
-                            <h3 id="story-2-title" className="text-2xl font-semibold text-slate-900 mb-6">Latest Updates</h3>
-                            <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                                Stay informed about our recent activities, including equipment collections and international shipments.
+                            <h3 className="text-3xl font-semibold text-slate-900 mb-6">Latest Updates</h3>
+                            <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                                Stay informed about our recent activities, including equipment collections, community workshops, 
+                                and international shipments. We share updates from the field, highlighting the progress 
+                                and impact made possible through your support.
                             </p>
                             
-                            <div className="flex items-start gap-4 p-5 bg-slate-50 rounded-2xl border border-slate-100" role="status">
-                                <Newspaper className="text-sky-600 flex-shrink-0 mt-1" size={28} aria-hidden="true" />
-                                <div>
-                                    <p className="text-slate-700 font-semibold text-lg">Last shipment arrived in South America – February 2026</p>
+                            <div className="space-y-4">
+                                <div className="flex items-center gap-4 p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                                    <Newspaper className="text-sky-600" size={24} />
+                                    <p className="text-slate-700 font-medium">New collection drive in Toronto - April 2026</p>
+                                </div>
+                                <div className="flex items-center gap-4 p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                                    <Heart className="text-rose-500" size={24} />
+                                    <p className="text-slate-700 font-medium">22 containers delivered since 2021</p>
                                 </div>
                             </div>
                         </div>
 
                         <div className="w-full lg:w-1/2">
-                            <div className="grid grid-cols-2 gap-4 group">
+                            <div className="grid grid-cols-2 gap-6">
                                 <img 
                                     src="/images/07-embarque-contenedor-1.webp" 
-                                    alt="07 embarque contenedor 1" 
-                                    className="rounded-[2rem] shadow-xl w-full h-[350px] object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                                    alt="Shipment update" 
+                                    className="rounded-[2.5rem] shadow-xl w-full h-[400px] object-cover mt-8"
                                 />
                                 <img 
                                     src="/images/08-recepcion-equipo-destino-7b.webp" 
-                                    alt="08 recepcion equipo destino 7b" 
-                                    className="rounded-[2rem] shadow-xl w-full h-[350px] object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                                    alt="Equipment delivery" 
+                                    className="rounded-[2.5rem] shadow-xl w-full h-[400px] object-cover"
                                 />
                             </div>
                         </div>
                     </article>
 
-                    {/* --- BLOQUE ABRIL 2026 (Imagen Derecha - 1 FOTO GRANDE) --- */}
-                    <article 
+                    {/* --- ARTÍCULO 3: JOURNEY --- */}
+                    <article id="story-3-title"
                         ref={ref3}
-                        className={`flex flex-col lg:flex-row items-center gap-16 transition-all duration-1000 ${
-                            inView3 ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"
-                        }`}
-                    >
-                        <div className="w-full lg:w-1/2">
-                            <h3 className="text-2xl font-semibold text-slate-900 mb-6">Upcoming Shipments</h3>
-                            <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                                Progress of our current logistics and upcoming deliveries for April.
-                            </p>
-
-                            <div className="flex items-start gap-4 p-5 bg-slate-50 rounded-2xl border border-slate-100" role="status">
-                                <Newspaper className="text-sky-600 flex-shrink-0 mt-1" size={28} aria-hidden="true" />
-                                <div>
-                                    <p className="text-slate-700 font-semibold text-lg italic">
-                                        "New shipment in transit - April 2026"
-                                    </p>
-                                    
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="w-full lg:w-1/2">
-                            <div className="relative group">
-                                <img 
-                                    src="/images/57-embarque-contenedor-3.webp" 
-                                    alt="57 embarque contenedor 3" 
-                                    className="rounded-[2.5rem] shadow-2xl w-full h-[450px] object-cover transition-transform duration-700 group-hover:scale-[1.01]"
-                                    loading="lazy"
-                                />
-                                <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm p-4 rounded-2xl shadow-lg border border-sky-100 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                    <Camera className="text-sky-600" size={24} />
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    {/* --- HISTORIA 3: JOURNEY (ÚLTIMA - 3 FOTOS) --- */}
-                    <article 
-                        ref={ref4} // Usamos ref4 para esta nueva sección
                         className={`flex flex-col gap-12 transition-all duration-1000 ${
-                            inView4 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                            inView3 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                         }`}
-                        aria-labelledby="story-3-title"
                     >
-                        <div className="max-w-3xl">
-                            <h3 id="story-3-title" className="text-2xl font-semibold text-slate-900 mb-6">From Collection to Delivery</h3>
-                            <p className="text-lg text-slate-600 leading-relaxed">
+                        <div className="max-w-4xl">
+                            <h3 className="text-3xl font-semibold text-slate-900 mb-6">From Collection to Delivery</h3>
+                            <p className="text-lg text-slate-600 leading-relaxed mb-6">
                                 Follow the journey of donated equipment, from local collection and refurbishment to
-                                distribution around the world. We provide a transparent view of real change.
+                                distribution in communities around the world. Through photos and stories, we provide a
+                                transparent view of how your contributions create real change.
                             </p>
-                            <div className="mt-8 flex gap-3 items-center text-sky-800 font-semibold bg-sky-50 p-4 rounded-xl w-fit">
-                                <Heart size={20} fill="currentColor" />
-                                Every story is a reminder that mobility changes lives.
+                            <div className="inline-flex items-center gap-3 bg-sky-600 text-white px-6 py-3 rounded-2xl font-semibold shadow-lg shadow-sky-200">
+                                <Camera size={20} />
+                                Visual Journey
                             </div>
                         </div>
 
-                        {/* --- Diseño de TRES imágenes --- */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 group">
-                            {/* Imagen 1: Toronto */}
-                            <figure className="relative overflow-hidden rounded-[2rem] shadow-xl aspect-[4/3]">
-                                <img 
-                                    src="/images/45-recojo-de-equipos-toronto.webp" 
-                                    alt="45 recojo de equipos Toronto" 
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
-                                    loading="lazy"
-                                />
-                                <figcaption className="absolute bottom-4 left-4 text-white text-xs bg-black/60 px-3 py-1.5 rounded-full backdrop-blur-sm">Toronto</figcaption>
-                            </figure>
-
-                            {/* Imagen 2: Destino */}
-                            <figure className="relative overflow-hidden rounded-[2rem] shadow-xl aspect-[4/3]">
-                                <img 
-                                    src="/images/53-recepcion-equipo-destino-5.webp" 
-                                    alt="53 recepcion equipo destino 5" 
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
-                                    loading="lazy"
-                                />
-                                <figcaption className="absolute bottom-4 left-4 text-white text-xs bg-black/60 px-3 py-1.5 rounded-full backdrop-blur-sm">Recepción Destino 5</figcaption>
-                            </figure>
-
-                            {/* Imagen 3: Christian (Ocupa 2 columnas en móvil/tablet para equilibrar, 1 en desktop) */}
-                            <figure className="relative overflow-hidden rounded-[2rem] shadow-xl aspect-[4/3] sm:col-span-2 lg:col-span-1">
-                                <img 
-                                    src="/images/15-christian.webp" 
-                                    alt="15 christian" 
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
-                                    loading="lazy"
-                                />
-                                <figcaption className="absolute bottom-4 left-4 text-white text-xs bg-black/60 px-3 py-1.5 rounded-full backdrop-blur-sm">Christian</figcaption>
-                            </figure>
+                        {/* Galería de 3 imágenes */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div className="group overflow-hidden rounded-[2.5rem] shadow-xl h-[350px]">
+                                <img src="/images/45-recojo-de-equipos-toronto.webp" alt="Toronto Collection" className="w-full h-full object-cover transition duration-700 group-hover:scale-110" />
+                            </div>
+                            <div className="group overflow-hidden rounded-[2.5rem] shadow-xl h-[350px] md:translate-y-12">
+                                <img src="/images/53-recepcion-equipo-destino-5.webp" alt="Refurbishment" className="w-full h-full object-cover transition duration-700 group-hover:scale-110" />
+                            </div>
+                            <div className="group overflow-hidden rounded-[2.5rem] shadow-xl h-[350px]">
+                                <img src="/images/15-christian.webp" alt="Delivery" className="w-full h-full object-cover transition duration-700 group-hover:scale-110" />
+                            </div>
                         </div>
                     </article>
-
                 </div>
 
-                {/* --- FOOTER DE SECCIÓN --- */}
-                <footer className="mt-24 text-center border-t border-slate-100 pt-16">
-                    <p className="text-2xl font-semibold text-slate-800 italic">
-                        "Thank you for being part of this journey."
-                    </p>
+                {/* --- SECCIÓN FINAL / FOOTER --- */}
+                <footer className="mt-40 text-center py-20 bg-slate-900 rounded-[4rem] text-white px-6">
+                    <Heart size={48} className="mx-auto mb-8 text-sky-400" fill="currentColor" />
+                    <h3 className="text-3xl md:text-4xl font-bold mb-6 italic">"Every story is a reminder that mobility changes lives."</h3>
+                    <p className="text-xl text-slate-300">Thank you for being part of this journey.</p>
                 </footer>
             </div>
         </section>

@@ -193,6 +193,32 @@ export default function EquipmentDonation() {
                             </ul>
                         </div>
 
+                        <div className="bg-white rounded-[2.5rem] p-10 border border-sky-100 shadow-sm overflow-hidden relative group">
+        {/* Decoración sutil de fondo */}
+        <div className="absolute -right-4 -top-4 w-24 h-24 bg-sky-50 rounded-full transition-transform group-hover:scale-110" />
+        
+        <h4 className="text-xl font-bold text-slate-900 mb-4 tracking-tight relative">
+            Direct Submission
+        </h4>
+        <p className="text-slate-500 mb-6 text-sm relative">
+            Prefer to send your donation details, photos, or documents directly? Reach out to us at:
+        </p>
+
+        {/* Caja de Correo resaltada */}
+        <div className="bg-slate-50 border border-slate-100 rounded-2xl p-5 text-center transition-colors hover:border-sky-200">
+            <span className="text-[10px] uppercase font-bold text-slate-400 block mb-1 tracking-widest">
+                Donation Inquiries
+            </span>
+            <code className="text-base md:text-lg font-mono font-bold text-sky-700 break-all">
+                {PURINAPAQ_EMAILS.DONATION}
+            </code>
+        </div>
+        
+        <p className="mt-4 text-[13px] text-slate-400 text-center italic leading-snug">
+            "Every donation starts a journey of mobility."
+        </p>
+    </div>
+
                         {/* Note */}
                         <div className="px-6">
                             <p className="text-sm text-slate-400 italic text-center">

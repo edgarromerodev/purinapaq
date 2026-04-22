@@ -237,15 +237,34 @@ export default function DeviceRequestForm() {
                     {/* SIDEBAR CARDS */}
                     <div className="space-y-8">
                         <div className="bg-sky-800 rounded-[2.5rem] p-10 text-white relative overflow-hidden shadow-xl">
-                            <FileText className="mb-6 text-sky-300" size={48} />
-                            <h4 className="text-2xl font-semibold mb-6">Offline Application</h4>
-                            <p className="text-sky-100/80 mb-8 text-lg">
-                                You can also download, complete, and send the PDF form to our office.
-                            </p>
-                            <a href="/forms/device-request.pdf" download className="inline-flex items-center justify-center w-full py-4 mb-8 bg-white text-sky-800 rounded-2xl font-bold text-base transition-all hover:bg-sky-50 shadow-lg gap-2">
-                                <FileText size={20} /> Download PDF Form
-                            </a>
-                        </div>
+        <FileText className="mb-6 text-sky-300" size={48} />
+        <h4 className="text-2xl font-semibold mb-4">Manual Submission</h4>
+        <p className="text-sky-100/80 mb-8 text-lg">
+            Download the form and send your completed application or PDF documents to:
+        </p>
+
+        {/* Bloque de Correo para copiar/ver */}
+        <div className="bg-sky-900/50 border border-sky-400/20 rounded-2xl p-5 mb-8">
+            <span className="text-xs uppercase font-bold text-sky-300 block mb-1">Official Email</span>
+            <code className="text-lg md:text-xl font-mono text-white break-all">
+                {PURINAPAQ_EMAILS.REQUEST}
+            </code>
+        </div>
+
+        <div className="flex flex-col gap-4">
+            <a 
+                href="/forms/device-request.pdf" 
+                download 
+                className="inline-flex items-center justify-center w-full py-4 bg-white text-sky-800 rounded-2xl font-bold text-base transition-all hover:bg-sky-50 shadow-lg gap-2"
+            >
+                <FileText size={20} /> Download PDF Form
+            </a>
+            
+            <p className="text-center text-sm text-sky-200/60 italic">
+                Attach your documents and send them to the email above.
+            </p>
+        </div>
+    </div>
                         
                         <div className="bg-white rounded-[2.5rem] p-10 border border-sky-100 shadow-sm text-center">
                             <Accessibility className="mb-4 text-sky-600 mx-auto" size={40} />
