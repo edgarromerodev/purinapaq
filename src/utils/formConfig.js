@@ -14,16 +14,29 @@ export const PURINAPAQ_EMAILS = {
  * @param {string} toEmail 
  * @param {string} subject 
  */
+
 export const sendForm = async (formData, toEmail, subject) => {
   formData.append("access_key", WEB3FORMS_KEY);
   formData.append("to", toEmail);
   formData.append("subject", subject);
   formData.append("from_name", "Purinapaq Web System"); 
 
-  const response = await fetch("https://api.web3forms.com/submit", {
-    method: "POST",
-    body: formData,
-  });
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
 
-  return await response.json();
+    const data = await response.json();
+    
+    // Si el envío falla, lo verás en la consola del navegador (F12)
+    if (!data.success) {
+      console.error("Error de Web3Forms:", data.message);
+    }
+    
+    return data;
+  } catch (error) {
+    console.error("Error de red:", error);
+    return { success: false };
+  }
 };

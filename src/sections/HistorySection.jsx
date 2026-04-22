@@ -15,10 +15,7 @@ export default function HistorySection() {
                 
                 <div className="max-w-[1650px] px-6 md:px-10 lg:px-12 xl:px-16 2xl:px-20 mx-auto w-full">
                     
-                    <SectionTitle 
-                        text1="Our Journey" 
-                        text2="The History of" 
-                    />
+                 
                     
                     <p className="text-center text-slate-500 mt-4 text-lg">
                         Since 2007, transforming lives through mobility and human dignity.
@@ -81,13 +78,13 @@ export default function HistorySection() {
             {/* Contenedor de las dos imágenes simétricas */}
             <div className="grid grid-cols-2 gap-4">
                 <img 
-                    src="/images/iniciativa-2026.webp" 
+                    src="/images/recepcion-equipo-destino.webp" 
                     alt="Global Impact 1" 
                     className="rounded-[2rem] shadow-xl w-full h-[350px] object-cover transition-transform duration-700 group-hover:scale-[1.02]"
                     loading="lazy"
                 />
                 <img 
-                    src="/images/07-embarque-contenedor-1.webp" 
+                    src="/images/43-chica1.webp" 
                     alt="Global Impact 2" 
                     className="rounded-[2rem] shadow-xl w-full h-[350px] object-cover transition-transform duration-700 group-hover:scale-[1.02]"
                     loading="lazy"

@@ -21,12 +21,18 @@ export default function AboutSection() {
                 }`}
             >
                 
-                {/* Título de la Sección - Manteniendo la estructura de SectionTitle */}
-                <SectionTitle 
-                    text2="Help children and adults with disabilities live more independent and dignity." 
-                    text3="You can make a difference today"
-                />
+                {/* Reemplaza el <SectionTitle /> por este bloque manual */}
+<div className="text-center mb-16">
 
+    {/* El secreto está en el 'max-w-2xl'. Esto obliga al texto a saltar a 2 líneas en desktop */}
+    <h2 className="text-3xl  font-semibold text-slate-900 mt-2 max-w-[900px] mx-auto leading-tight">
+        Help children and adults with disabilities live more independent and dignity.
+    </h2>
+
+    <p className="text-xl text-slate-500 mt-4 max-w-lg mx-auto">
+        You can make a difference today
+    </p>
+</div>
                 <div className="mt-24 flex flex-col lg:flex-row items-center gap-16">
                     {/* COLUMNA IZQUIERDA: IMAGEN CON ACCESIBILIDAD */}
                     <div className="w-full lg:w-1/2">

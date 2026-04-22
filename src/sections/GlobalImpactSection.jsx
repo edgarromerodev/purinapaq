@@ -69,7 +69,7 @@ export default function GlobalImpactSection() {
                         </div>
 
                         {/* --- BLOQUE 2: LOCAL PARTNERSHIPS --- */}
-                        {/* --- BLOQUE 2: LOCAL PARTNERSHIPS --- */}
+                      
 <div 
     ref={ref2}
     className={`flex flex-col lg:flex-row-reverse items-center gap-16 transition-all duration-1000 ${

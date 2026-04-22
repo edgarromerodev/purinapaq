@@ -70,7 +70,6 @@ export default function StatsSection() {
                     <SectionTitle 
                         text1="Our Impact" 
                         text2="Figures that transform" 
-                        text3="realities" 
                     />
                     <p className="mt-4 text-slate-600 max-w-2xl mx-auto text-lg">
                         Each number represents a story of resilience and the collective effort to bring hope.

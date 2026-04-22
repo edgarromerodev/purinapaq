@@ -27,34 +27,44 @@ export default function EquipmentDonation() {
     ];
 
     // FUNCIÓN PARA MANEJAR EL ENVÍO
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        setIsSubmitting(true);
-        setStatus(null);
+   const handleSubmit = async (event) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setStatus(null);
 
-        const formData = new FormData(event.target);
+    const formElement = event.target;
+    const formData = new FormData(formElement);
 
-        try {
-            const result = await sendForm(
-                formData, 
-                PURINAPAQ_EMAILS.DONATION, 
-                "Nueva Donación de Equipo - Purinapaq"
-            );
+    // TRUCO: Convertimos los checkboxes en una lista legible
+    const selectedEquipment = [];
+    formElement.querySelectorAll('input[name="equipment_type[]"]:checked').forEach((el) => {
+        selectedEquipment.push(el.value);
+    });
+    
+    // Reemplazamos el array por una cadena de texto para el correo
+    formData.delete("equipment_type[]");
+    formData.append("Equipamiento Seleccionado", selectedEquipment.join(", "));
 
-            if (result.success) {
-                setStatus("success");
-                event.target.reset(); // Limpia el formulario
-            } else {
-                setStatus("error");
-            }
-        } catch (error) {
+    try {
+        const result = await sendForm(
+            formData, 
+            PURINAPAQ_EMAILS.DONATION, 
+            "Nueva Donación de Equipo - Purinapaq"
+        );
+
+        if (result.success) {
+            setStatus("success");
+            formElement.reset(); 
+        } else {
             setStatus("error");
-        } finally {
-            setIsSubmitting(false);
-            // Ocultar mensaje después de 5 segundos
-            setTimeout(() => setStatus(null), 5000);
         }
-    };
+    } catch (error) {
+        setStatus("error");
+    } finally {
+        setIsSubmitting(false);
+        setTimeout(() => setStatus(null), 5000);
+    }
+};
 
     return (
         <section className="py-24 bg-sky-50 overflow-hidden text-slate-900">
