@@ -57,6 +57,7 @@ export default function Navbar() {
         { name: "Impact Stories", href: "/news#story-1-title" },
         { name: "Latest Updates", href: "/news#story-2-title" },
         { name: "Our Journey", href: "/news#story-3-title" },
+        { name: "Campaign 2026", href: "/news#campaign-2026" }
     ] 
 },
         { name: "Contact", href: "#contacto" },

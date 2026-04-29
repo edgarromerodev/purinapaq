@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -30,6 +30,14 @@ export default function App() {
             <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />
+                
+                {/* SOLUCIÓN A LOS ENLACES ANTIGUOS DE GOOGLE */}
+                <Route path="/about.html" element={<Navigate to="/mision-vision" replace />} />
+                <Route path="/contact.html" element={<Navigate to="/" replace />} />
+                <Route path="/request.html" element={<Navigate to="/request-equipment" replace />} />
+                <Route path="/getinvolved.html" element={<Navigate to="/donate" replace />} />
+
+                {/* Tus rutas actuales */}
                 <Route path="/mision-vision" element={<MissionVision />} />
                 <Route path="/history" element={<HistorySection />} />
                 <Route path="/team-partners" element={<TeamPartners />} />
@@ -39,13 +47,16 @@ export default function App() {
                 <Route path="/global-impact" element={<GlobalImpactSection/>} />
                 <Route path="/testimonials" element={<Testimonials/>} />
                 <Route path="/gallery" element={<GallerySection/>} />
-                  <Route path="/donate" element={<DonationsPage/>} />
+                <Route path="/donate" element={<DonationsPage/>} />
                 <Route path="/equipment-donations" element={<EquipmentDonation />} />
                 <Route path="/volunteer" element={<VolunteerSection />} />
                 <Route path="/sponsor" element={<SponsorSection />} />
                 <Route path="/news" element={<NewsStories/>} />
                 <Route path="/privacy" element={<PrivacyPolicy/>} />
                 <Route path="/terms" element={<TermsConditions/>} />
+
+                {/* OPCIONAL: Si alguien escribe cualquier otra cosa mal, mandarlo al inicio */}
+                <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
             <Footer />
         </>

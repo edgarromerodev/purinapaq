@@ -7,7 +7,9 @@ import {
   Truck, 
   Users, 
   TrendingUp,
-  HandHeart
+  HandHeart,
+  Mail,
+  CreditCard
 } from "lucide-react";
 import SectionTitle from "../components/SectionTitle";
 import DonationCTA from "./DonationCTA";
@@ -59,7 +61,6 @@ export default function DonationsPage() {
                             </div>
                         </div>
 
-                        {/* --- IMAGEN CON TAMAÑO CORREGIDO (IGUAL A HISTORIA) --- */}
                         <div className="w-full lg:w-1/2 relative">
                             <div className="relative">
                                 <img 
@@ -115,15 +116,27 @@ export default function DonationsPage() {
                                 <p className="text-slate-600 text-lg leading-relaxed mb-6">
                                     Donors receive <strong>official donation receipts for tax purposes</strong>. Whenever possible, we share updates, photos, and reports that demonstrate the impact of your generosity.
                                 </p>
-                                <div className="flex items-center gap-4 p-4 bg-sky-50 rounded-2xl text-sky-800 text-sm font-medium">
-                                    <HandHeart size={24} className="flex-shrink-0" />
-                                    Your support ensures essential resources reach individuals with limited or no access.
+                                
+                                {/* NUEVA SUBSECCIÓN: BY CHECK */}
+                                <div className="mt-8 p-6 bg-slate-50 rounded-2xl border border-dashed border-slate-300">
+                                    <div className="flex items-center gap-2 text-slate-800 font-bold mb-2">
+                                        <CreditCard size={20} className="text-sky-600" /> 
+                                        Donate by Check
+                                    </div>
+                                    <p className="text-slate-600 text-sm mb-1">Please make checks payable to:</p>
+                                    <p className="text-lg font-bold text-slate-900">Purinapaq Mobility Without Borders</p>
                                 </div>
                             </div>
 
                             <div className="text-center lg:text-left px-4">
                                 <p className="text-2xl font-semibold text-slate-800">Join Our Mission</p>
                                 <p className="text-slate-500 mt-2 italic">By supporting Purinapaq, you are helping build a world where mobility is not a privilege, but a right.</p>
+                                
+                                {/* DATO DE CONTACTO ADICIONAL */}
+                                <div className="mt-6 flex items-center justify-center lg:justify-start gap-2 text-sky-700 font-medium">
+                                    <Mail size={18} />
+                                    <a href="mailto:info@purinapaq.org" className="hover:underline">info@purinapaq.org</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -135,6 +148,7 @@ export default function DonationsPage() {
             <div className="sr-only">
                 <h2>Detailed Donation Information</h2>
                 <p>Support Purinapaq - Mobility Without Borders.</p>
+                <p>Contact: info@purinapaq.org</p>
             </div>
         </main>
     );

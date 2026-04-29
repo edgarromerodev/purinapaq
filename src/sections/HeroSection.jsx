@@ -4,6 +4,9 @@ import Typewriter from "typewriter-effect";
 export default function HeroSection() {
   const navigate = useNavigate();
 
+  // Enlace de 50 dólares (pago único) como predeterminado para el Hero
+  const DONATE_LINK_50 = "https://donate.stripe.com/fZu4gy5iv5pl9y6fjvbwk01";
+
   return (
     <section
       id="inicio"
@@ -35,10 +38,10 @@ export default function HeroSection() {
         </picture>
 
         {/* Overlay Mobile */}
-<div className="absolute inset-0 bg-black/35 md:hidden"></div>
+        <div className="absolute inset-0 bg-black/35 md:hidden"></div>
 
-{/* Overlay Desktop */}
-<div className="absolute inset-0 hidden md:block bg-gradient-to-r from-black/95 via-black/20 to-transparent"></div>
+        {/* Overlay Desktop */}
+        <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-black/95 via-black/20 to-transparent"></div>
       </div>
 
       {/* Contenido */}
@@ -81,11 +84,12 @@ export default function HeroSection() {
 
             {/* Botones */}
             <div className="mt-10 flex flex-wrap justify-center lg:justify-start gap-5">
+              {/* BOTÓN ACTUALIZADO A $50 */}
               <a
-                href="https://donate.stripe.com/4gM5kCcKX4lh39I8V7bwk00?locale=en&__embed_source=buy_btn_1TIu7aCZmNSjYL4FIWzXOcRe"
+                href={DONATE_LINK_50}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-sky-700 hover:bg-sky-800 text-white px-10 py-4 rounded-full font-bold transition-all shadow-xl text-lg active:scale-95"
+                className="bg-sky-700 hover:bg-sky-800 text-white px-10 py-4 rounded-full font-bold transition-all shadow-xl text-lg active:scale-95 flex items-center justify-center"
               >
                 Donate Now
               </a>

@@ -144,11 +144,14 @@ export default function ContactForm() {
                             </div>
                         </div>
 
-                        <div className="relative z-10 mt-12 pt-8 border-t border-white/10">
-                            <p className="text-xs text-sky-100/60 italic leading-relaxed">
-                                Purinapaq is a registered charitable organization under number <span className="font-semibold">#742640535RR0001</span>
-                            </p>
-                        </div>
+                      <div className="relative z-10 mt-12 pt-8 border-t border-white/10">
+    <p className="text-sm mb-2 text-sky-200">
+        Official Inquiry: <span className="font-semibold text-white">info@purinapaq.org</span>
+    </p>
+    <p className="text-xs text-sky-100/60 italic leading-relaxed">
+        Purinapaq is a registered charitable organization under number <span className="font-semibold">#742640535RR0001</span>
+    </p>
+</div>
                     </div>
 
 

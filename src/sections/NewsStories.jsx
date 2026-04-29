@@ -1,6 +1,6 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
-import { BookOpen, Camera, Newspaper, ArrowRight, Heart } from "lucide-react";
+import { BookOpen, Camera, Newspaper, ArrowRight, Heart, Download, FileText } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 export default function NewsStories() {
@@ -152,6 +152,80 @@ export default function NewsStories() {
                             </div>
                         </div>
                     </article>
+
+                    
+{/* --- SECCIÓN: CAMPAIGN 2026 / DOWNLOAD --- */}
+<article 
+    id="campaign-2026"
+    className="mt-40 flex flex-col lg:flex-row items-center gap-12 bg-sky-50 rounded-[3rem] p-8 md:p-16 border border-sky-100 shadow-sm"
+>
+    <div className="w-full lg:w-2/3">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-600 text-white text-xs font-semibold mb-6 shadow-md">
+            Campaign 2026
+        </div>
+        
+        <h3 className="text-3xl  font-semibold text-slate-900 mb-6 leading-tight">
+            "The Gift of Mobility 2026" <br />
+            <span className="text-sky-600">Fundraising Campaign</span>
+        </h3>
+
+        <div className="space-y-4 text-lg text-slate-600 leading-relaxed mb-10">
+            <p>
+                We are proud to introduce our latest initiative, <strong>The Gift of Mobility 2026</strong>, 
+                a fundraising campaign dedicated to restoring mobility and independence for individuals living with disabilities.
+            </p>
+            <p>
+                With your support, we can recover, refurbish, and deliver essential mobility and assistive devices 
+                to those who need them most, both in underserved communities across Canada and in developing countries. 
+                Your contribution has the power to truly transform lives.
+            </p>
+            <p className="italic font-medium text-slate-500">
+                Explore the campaign details below and learn how you can get involved. We invite you to be part 
+                of this meaningful movement and help us deliver the gift of mobility to those who need it most.
+            </p>
+        </div>
+        
+        {/* BOTÓN DE DESCARGA AJUSTADO */}
+        <div className="flex flex-col sm:flex-row items-center gap-6">
+            <a 
+                href="/forms/purinapaq-annual-report.pdf" 
+                download="The_Gift_of_Mobility_2026_Purinapaq.pdf"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold hover:bg-slate-800 transition-all shadow-xl active:scale-95 group"
+            >
+                <FileText size={20} className="text-sky-400" />
+                Download Campaign PDF
+                <Download size={18} className="ml-2 group-hover:translate-y-1 transition-transform" />
+            </a>
+            
+            <p className="text-sm text-slate-500 font-medium max-w-[200px]">
+                Thanks to the generosity of supporters like you.
+            </p>
+        </div>
+    </div>
+
+    <div className="w-full lg:w-1/3 flex justify-center">
+        {/* Representación visual de la Campaña */}
+        <div className="relative group">
+            {/* Decoración de fondo */}
+            <div className="absolute inset-0 bg-sky-200 rounded-3xl rotate-3 group-hover:rotate-6 transition-transform"></div>
+            
+            {/* Tarjeta Visual */}
+            <div className="relative bg-white p-8 rounded-3xl shadow-2xl border border-slate-100 w-72 h-96 flex flex-col">
+                <div className="bg-sky-50 w-full h-40 rounded-xl mb-6 flex items-center justify-center">
+                    <Heart size={60} className="text-sky-600 animate-pulse" fill="currentColor" />
+                </div>
+                <div className="space-y-3">
+                    <div className="h-2 w-20 bg-sky-100 rounded"></div>
+                    <p className="font-extrabold text-xl text-slate-900 leading-tight">The Gift of Mobility</p>
+                    <p className="text-sky-600 font-bold text-lg">2026</p>
+                    <div className="pt-4 flex items-center gap-2 text-slate-400 text-xs font-bold tracking-widest uppercase">
+                        <FileText size={14} /> Campaign Details
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
                 </div>
 
                 {/* --- SECCIÓN FINAL / FOOTER --- */}

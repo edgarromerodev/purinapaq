@@ -48,7 +48,10 @@ export default function NavDropdown({ name, href, subLinks, handleScroll }) {
                             <Link
                                 role="menuitem"
                                 to={sub.href}
-                                onClick={() => setIsOpen(false)}
+                                onClick={(e) => {
+                setIsOpen(false); 
+                handleScroll(e, sub.href); 
+            }}
                                 className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-700"
                             >
                                 {sub.name}
