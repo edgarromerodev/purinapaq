@@ -146,37 +146,52 @@ export default function DonationCTA() {
 
                 {/* Métodos Alternativos (Sin cambios) */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-                    <div className="bg-white p-8 rounded-[2.5rem] border border-slate-200 flex flex-col gap-6 shadow-sm hover:border-sky-300 transition-all group">
-                        <div className="bg-sky-100 p-4 rounded-2xl text-sky-700 self-start group-hover:bg-sky-700 group-hover:text-white transition-colors">
-                            <CreditCard size={28} />
+                    <div className="bg-white p-8 rounded-3xl border border-slate-200 flex flex-col gap-6 shadow-sm hover:border-sky-300 transition-all duration-300 group">
+                        <div className="bg-sky-100 p-4 rounded-full text-sky-700 self-start group-hover:bg-sky-700 group-hover:text-white transition-colors">
+                            <CreditCard size={24} />
                         </div>
-                        <div>
+                        <div className="flex flex-col h-full">
                             <h4 className="text-xl font-bold text-slate-800 mb-2">Via CanadaHelps</h4>
-                            <p className="text-slate-600 text-sm mb-6 leading-relaxed">Donate securely through Canada's most trusted platform.</p>
-                            <a href="https://www.canadahelps.org/en/charities/purinapaq-mobility-without-borders/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 w-full py-4 bg-slate-100 text-slate-800 rounded-xl font-bold text-sm hover:bg-sky-700 hover:text-white transition-all">
+                            <p className="text-slate-600 text-sm mb-6 leading-relaxed flex-grow">
+                                Donate securely through Canada's most trusted platform for registered charities.
+                            </p>
+                            <a 
+                                href="https://www.canadahelps.org/en/charities/purinapaq-mobility-without-borders/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center gap-2 w-full py-3.5 bg-sky-700 text-white rounded-xl font-bold text-sm hover:bg-sky-800 transition-all shadow-lg shadow-sky-100 active:scale-[0.98]"
+                            >
                                 Donate on CanadaHelps <ExternalLink size={16} />
                             </a>
                         </div>
                     </div>
 
-                    <div className="bg-white p-8 rounded-[2.5rem] border border-slate-200 flex flex-col gap-6 shadow-sm hover:border-sky-300 transition-all">
-                        <div className="bg-sky-100 p-4 rounded-2xl text-sky-700 self-start"><Send size={28} /></div>
+                    <div className="bg-white p-8 rounded-3xl border border-slate-200 flex flex-col gap-6 shadow-sm hover:border-sky-300 transition-all">
+                        <div className="bg-sky-100 p-4 rounded-full text-sky-700 self-start"><Send size={24} /></div>
                         <div>
                             <h4 className="text-xl font-bold text-slate-800 mb-2">E-Transfer</h4>
                             <p className="text-slate-600 text-sm mb-4 leading-relaxed">
-                                Send to: <strong className="text-sky-800">donations@purinapaq.org</strong>
+                                Send via online banking to:<br />
+                                <strong className="text-sky-800 text-base">donations@purinapaq.org</strong>
                             </p>
+                            <div className="bg-sky-50 border border-sky-100 p-4 rounded-lg text-xs text-sky-900 font-medium">
+                                <strong>Important:</strong> Include your email in the message to receive your tax receipt.
+                            </div>
                         </div>
                     </div>
 
-                    <div className="bg-white p-8 rounded-[2.5rem] border border-slate-200 flex flex-col gap-6 shadow-sm hover:border-sky-300 transition-all">
-                        <div className="bg-sky-100 p-4 rounded-2xl text-sky-700 self-start"><Landmark size={28} /></div>
+                    <div className="bg-white p-8 rounded-3xl border border-slate-200 flex flex-col gap-6 shadow-sm hover:border-sky-300 transition-all">
+                        <div className="bg-sky-100 p-4 rounded-full text-sky-700 self-start"><Landmark size={24} /></div>
                         <div>
                             <h4 className="text-xl font-bold text-slate-800 mb-2">By Check</h4>
                             <p className="text-slate-600 text-sm mb-4">
                                 <strong className="text-slate-800">Payable to:</strong> Purinapaq<br />
                                 306-30 Elsinore Path, Etobicoke, ON, M8V 3Z6.
                             </p>
+                            <div className="bg-sky-50 border border-sky-100 p-4 rounded-lg text-xs text-sky-900 font-medium">
+                                <p className="text-[10px] text-sky-700/60 uppercase font-bold tracking-wider mb-1">Registration Number</p>
+                                <p className="text-sm text-sky-900 font-mono font-bold">742640535RR0001</p>
+                            </div>
                         </div>
                     </div>
                 </div>
