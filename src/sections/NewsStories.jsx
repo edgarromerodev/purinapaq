@@ -188,8 +188,8 @@ export default function NewsStories() {
         {/* BOTÓN DE DESCARGA AJUSTADO */}
         <div className="flex flex-col sm:flex-row items-center gap-6">
             <a 
-                href="/forms/purinapaq-annual-report.pdf" 
-                download="The_Gift_of_Mobility_2026_Purinapaq.pdf"
+                href="/forms/pmwb_fundraising campaign GoM2026.pdf" 
+    download="pmwb_fundraising campaign GoM2026.pdf"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold hover:bg-slate-800 transition-all shadow-xl active:scale-95 group"
             >
                 <FileText size={20} className="text-sky-400" />

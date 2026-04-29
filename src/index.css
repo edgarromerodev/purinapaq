@@ -16,7 +16,9 @@ button {
 }
 
 
-
+html {
+  scroll-behavior: smooth;
+}
 /* index.css */
 @layer utilities {
   .reveal-left {

@@ -4,8 +4,6 @@ import Typewriter from "typewriter-effect";
 export default function HeroSection() {
   const navigate = useNavigate();
 
-  // Enlace de 50 dólares (pago único) como predeterminado para el Hero
-  const DONATE_LINK_50 = "https://donate.stripe.com/fZu4gy5iv5pl9y6fjvbwk01";
 
   return (
     <section
@@ -86,13 +84,11 @@ export default function HeroSection() {
             <div className="mt-10 flex flex-wrap justify-center lg:justify-start gap-5">
               {/* BOTÓN ACTUALIZADO A $50 */}
               <a
-                href={DONATE_LINK_50}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-sky-700 hover:bg-sky-800 text-white px-10 py-4 rounded-full font-bold transition-all shadow-xl text-lg active:scale-95 flex items-center justify-center"
-              >
-                Donate Now
-              </a>
+    href="#donar"
+    className="bg-sky-700 hover:bg-sky-800 text-white px-10 py-4 rounded-full font-bold transition-all shadow-xl text-lg active:scale-95 flex items-center justify-center"
+  >
+    Donate Now
+  </a>
 
               <button
                 onClick={() => navigate("/mision-vision")}
