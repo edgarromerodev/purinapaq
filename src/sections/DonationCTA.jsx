@@ -185,7 +185,7 @@ export default function DonationCTA() {
                         <div>
                             <h4 className="text-xl font-bold text-slate-800 mb-2">By Check</h4>
                             <p className="text-slate-600 text-sm mb-4">
-                                <strong className="text-slate-800">Payable to:</strong> Purinapaq<br />
+                                <strong className="text-slate-800">Payable to:</strong> Purinapaq Mobility without borders<br />
                                 306-30 Elsinore Path, Etobicoke, ON, M8V 3Z6.
                             </p>
                             <div className="bg-sky-50 border border-sky-100 p-4 rounded-lg text-xs text-sky-900 font-medium">
